@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NTU 2026 T1 课表</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --panel: #ffffff;
+      --ink: #111827;
+      --muted: #667085;
+      --line: #e1e8f2;
+      --line-strong: #cfd9e8;
+      --head: #eaf1fa;
+      --blue: #2f68e8;
+      --teal: #0f7f72;
+      --orange: #bc5508;
+      --rose: #c91545;
+      --violet: #7c3aed;
+      --slate: #64748b;
+      --shadow: 0 18px 42px rgba(15, 23, 42, 0.07);
+      --radius: 8px;
+      --time-height: 66px;
+      color-scheme: light;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        "PingFang SC", "Microsoft YaHei", sans-serif;
+      letter-spacing: 0;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .topbar {
+      background: var(--head);
+      border-bottom: 6px solid #dfe9f6;
+    }
+
+    .wrap {
+      width: min(1480px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 30px 0 24px;
+    }
+
+    h1,
+    h2,
+    p {
+      margin: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.05rem, 4vw, 3.2rem);
+      line-height: 1.05;
+      font-weight: 820;
+      word-break: keep-all;
+    }
+
+    .nowrap {
+      white-space: nowrap;
+    }
+
+    .meta {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.4;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: end;
+      gap: 10px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 16px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #fff;
+      color: #273244;
+      font-weight: 760;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      border-color: #0f766e;
+      background: #0f766e;
+      color: #fff;
+    }
+
+    .button:active {
+      transform: translateY(1px);
+    }
+
+    main.wrap {
+      padding: 28px 0 32px;
+    }
+
+    .pager {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr) 52px;
+      gap: 12px;
+      align-items: stretch;
+      margin-bottom: 18px;
+    }
+
+    .arrow {
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #fff;
+      color: #1f2937;
+      font-size: 1.55rem;
+      font-weight: 850;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    .week-title {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 20px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .week-title h2 {
+      font-size: clamp(1.4rem, 2.7vw, 2rem);
+      line-height: 1.12;
+    }
+
+    .week-title p {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .week-count {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 0 12px;
+      border-radius: var(--radius);
+      background: #f1f5f9;
+      color: #334155;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .week-tabs {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 6px;
+      margin: 0 0 18px;
+    }
+
+    .week-tab {
+      min-height: 34px;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #fff;
+      color: #475467;
+      font-weight: 760;
+      cursor: pointer;
+    }
+
+    .week-tab.active {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .calendar-shell {
+      overflow-x: auto;
+      border: 1px solid var(--line-strong);
+      border-radius: var(--radius);
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .mobile-week {
+      display: none;
+    }
+
+    .calendar {
+      min-width: 1080px;
+      padding: 18px 20px 22px;
+    }
+
+    .day-header {
+      display: grid;
+      grid-template-columns: 66px repeat(7, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .day-header span {
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #eef3f8;
+      color: #344054;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .day-header span:first-child {
+      border: 0;
+      background: transparent;
+    }
+
+    .allday {
+      display: grid;
+      grid-template-columns: 66px repeat(7, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+      align-items: stretch;
+    }
+
+    .allday-label {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      color: #7b8aa0;
+      font-size: 0.88rem;
+      font-weight: 760;
+    }
+
+    .allday-cell {
+      min-height: 46px;
+      display: grid;
+      gap: 6px;
+      padding: 6px;
+      border: 1px dashed #d8e1ec;
+      border-radius: var(--radius);
+      background: #fafcff;
+    }
+
+    .floating-card {
+      padding: 8px 9px;
+      border-left: 5px solid var(--course-color);
+      border-radius: var(--radius);
+      background: #f3f7fb;
+      color: #1f2937;
+      line-height: 1.2;
+    }
+
+    .floating-card strong {
+      display: block;
+      font-size: 0.92rem;
+    }
+
+    .floating-card span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .time-grid {
+      display: grid;
+      grid-template-columns: 66px repeat(7, minmax(0, 1fr));
+      position: relative;
+    }
+
+    .times {
+      position: relative;
+      height: calc(13 * var(--time-height));
+    }
+
+    .time-label {
+      position: absolute;
+      right: 12px;
+      top: calc(var(--hour) * var(--time-height));
+      transform: translateY(-50%);
+      color: #8796aa;
+      font-size: 0.9rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .day-column {
+      position: relative;
+      height: calc(13 * var(--time-height));
+      border-left: 1px solid var(--line-strong);
+      border-right: 1px solid var(--line);
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent calc(var(--time-height) - 1px),
+        var(--line) calc(var(--time-height) - 1px),
+        var(--line) var(--time-height)
+      );
+    }
+
+    .event {
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      top: calc(var(--start) * var(--time-height));
+      height: max(52px, calc(var(--duration) * var(--time-height)));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 6px;
+      padding: 10px 11px;
+      border-radius: var(--radius);
+      background: var(--course-color);
+      color: #fff;
+      box-shadow: 0 14px 24px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+    }
+
+    .event.online {
+      background: linear-gradient(135deg, var(--course-color), #475569);
+    }
+
+    .event.quiz {
+      background: var(--violet);
+    }
+
+    .event-code {
+      font-size: 1.05rem;
+      line-height: 1;
+      font-weight: 850;
+    }
+
+    .event-time,
+    .event-title,
+    .event-place {
+      font-size: 0.88rem;
+      line-height: 1.22;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .event-title {
+      font-weight: 760;
+    }
+
+    .event-place {
+      opacity: 0.88;
+    }
+
+    .empty-note {
+      min-height: 78px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      border: 1px dashed var(--line-strong);
+      border-radius: var(--radius);
+      background: #fafcff;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-top: 14px;
+      padding: 0 4px;
+      color: #536176;
+      font-size: 0.93rem;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .dot {
+      width: 13px;
+      height: 13px;
+      border-radius: 4px;
+      background: var(--course-color);
+    }
+
+    .footer {
+      width: min(1480px, calc(100% - 48px));
+      margin: 0 auto;
+      padding: 0 0 34px;
+      color: #8a99ad;
+      font-size: 0.9rem;
+      line-height: 1.45;
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --time-height: 58px;
+      }
+
+      .wrap,
+      .footer {
+        width: min(100% - 28px, 720px);
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px 0 20px;
+      }
+
+      .actions {
+        justify-content: start;
+      }
+
+      .button {
+        flex: 1 1 160px;
+        min-height: 40px;
+      }
+
+      main.wrap {
+        padding-top: 18px;
+      }
+
+      .pager {
+        grid-template-columns: 44px minmax(0, 1fr) 44px;
+        gap: 8px;
+      }
+
+      .week-title {
+        min-height: 72px;
+        padding: 12px 13px;
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .week-count {
+        min-height: 30px;
+        font-size: 0.9rem;
+      }
+
+      .week-tabs {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      .calendar {
+        min-width: 960px;
+        padding: 14px;
+      }
+
+      .calendar-shell {
+        display: none;
+      }
+
+      .mobile-week {
+        display: grid;
+        gap: 12px;
+      }
+
+      .mobile-day {
+        padding: 14px;
+        border: 1px solid var(--line-strong);
+        border-radius: var(--radius);
+        background: #fff;
+        box-shadow: var(--shadow);
+      }
+
+      .mobile-day h3 {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 0 0 10px;
+        font-size: 1.08rem;
+      }
+
+      .mobile-date {
+        color: var(--muted);
+        font-size: 0.92rem;
+        font-weight: 760;
+        white-space: nowrap;
+      }
+
+      .mobile-event-list {
+        display: grid;
+        gap: 8px;
+      }
+
+      .mobile-event {
+        display: grid;
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 12px;
+        padding: 12px;
+        border-left: 6px solid var(--course-color);
+        border-radius: var(--radius);
+        background: #f8fafc;
+      }
+
+      .mobile-event.online {
+        border-left-color: var(--slate);
+      }
+
+      .mobile-event.quiz {
+        border-left-color: var(--violet);
+      }
+
+      .mobile-event-time {
+        color: #344054;
+        font-weight: 850;
+        line-height: 1.25;
+        font-variant-numeric: tabular-nums;
+      }
+
+      .mobile-event-body strong {
+        display: block;
+        line-height: 1.3;
+      }
+
+      .mobile-event-body span {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .mobile-empty {
+        color: var(--muted);
+        padding: 10px 0 2px;
+      }
+
+      .day-header,
+      .allday,
+      .time-grid {
+        grid-template-columns: 56px repeat(7, minmax(0, 1fr));
+      }
+
+      .day-header span {
+        min-height: 38px;
+      }
+
+      .times {
+        height: calc(13 * var(--time-height));
+      }
+
+      .time-label {
+        right: 8px;
+        font-size: 0.78rem;
+      }
+
+      .day-column {
+        height: calc(13 * var(--time-height));
+      }
+
+      .event {
+        left: 5px;
+        right: 5px;
+        min-height: 48px;
+        padding: 8px;
+      }
+
+      .event-code {
+        font-size: 0.96rem;
+      }
+
+      .event-time,
+      .event-title,
+      .event-place {
+        font-size: 0.76rem;
+      }
+
+      .legend {
+        font-size: 0.86rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap hero">
+      <section>
+        <h1>NTU 2026 学年 <span class="nowrap">T1 课表</span></h1>
+        <p class="meta">CA6000-CA6003 · 12 AU · 按周翻页查看</p>
+      </section>
+      <div class="actions">
+        <button class="button primary" id="export-ics" type="button">导出 Apple 日历</button>
+        <button class="button" id="today-week" type="button">回到当前周</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="pager" aria-label="周数翻页">
+      <button class="arrow" id="prev-week" type="button" aria-label="上一周">‹</button>
+      <div class="week-title">
+        <div>
+          <h2 id="week-heading">Week 1</h2>
+          <p id="week-range">8月3日 - 8月9日</p>
+        </div>
+        <span class="week-count" id="week-count">第 1 / 12 周</span>
+      </div>
+      <button class="arrow" id="next-week" type="button" aria-label="下一周">›</button>
+    </section>
+
+    <nav class="week-tabs" id="week-tabs" aria-label="快速选择周数"></nav>
+
+    <section class="calendar-shell" aria-label="当前周课程表">
+      <div class="calendar">
+        <div class="day-header" id="day-header"></div>
+        <div class="allday" id="allday-grid"></div>
+        <div class="time-grid" id="time-grid"></div>
+        <div class="empty-note" id="empty-note">这一周没有已登记课程</div>
+      </div>
+    </section>
+
+    <section class="mobile-week" id="mobile-week" aria-label="当前周手机课程表"></section>
+
+    <div class="legend" id="legend"></div>
+  </main>
+
+  <footer class="footer">
+    来源：AY26 T1 Timetable (20260728).pdf + CA6000 老师课程安排截图。公开页面不包含 Teams 会议链接或会议凭证。
+  </footer>
+
+  <script>
+    const termStart = new Date("2026-08-03T00:00:00+08:00");
+    const totalWeeks = 12;
+    const startHour = 9;
+    const endHour = 22;
+
+    const days = [
+      { key: "mon", label: "周一", offset: 0 },
+      { key: "tue", label: "周二", offset: 1 },
+      { key: "wed", label: "周三", offset: 2 },
+      { key: "thu", label: "周四", offset: 3 },
+      { key: "fri", label: "周五", offset: 4 },
+      { key: "sat", label: "周六", offset: 5 },
+      { key: "sun", label: "周日", offset: 6 }
+    ];
+
+    const courses = {
+      CA6000: {
+        title: "应用 AI 编程",
+        color: "#2f68e8",
+        lecturer: "Assoc Prof Vun Chan Hua, Nicholas"
+      },
+      CA6001: {
+        title: "AI 算法基础与应用",
+        color: "#bc5508",
+        lecturer: "Dr Zhang Jiehuang"
+      },
+      CA6002: {
+        title: "AI UX 与数据可视化设计原则",
+        color: "#0f7f72",
+        lecturer: "Assoc Prof Goh Wooi Boon"
+      },
+      CA6003: {
+        title: "数据治理、准备与分析最佳实践",
+        color: "#c91545",
+        lecturer: "Dr Smitha K G"
+      }
+    };
+
+    const events = [];
+
+    function addEvent(event) {
+      events.push(event);
+    }
+
+    function weekDate(week, dayKey) {
+      const day = days.find((item) => item.key === dayKey);
+      const date = new Date(termStart);
+      date.setDate(termStart.getDate() + (week - 1) * 7 + day.offset);
+      return date;
+    }
+
+    function addWeeklyOnlineVideo(weeks, code) {
+      weeks.forEach((week) => {
+        addEvent({
+          code,
+          week,
+          day: "sun",
+          floating: true,
+          kind: "video",
+          title: "线上视频 1 小时",
+          location: "Online Video",
+          note: "无固定时间"
+        });
+      });
+    }
+
+    [1, 2, 3, 4, 5, 6].forEach((week) => {
+      if (week === 1) {
+        addEvent({ code: "CA6000", week, day: "wed", start: "20:00", end: "22:00", title: "课堂", location: "LF LT" });
+        addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "17:00", title: "课堂", location: "LT20" });
+      } else if (week === 3) {
+        addEvent({ code: "CA6000", week, day: "wed", start: "17:00", end: "19:00", title: "Teams 线上课", location: "Microsoft Teams", kind: "online" });
+        addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "17:00", title: "Teams 线上课", location: "Microsoft Teams", kind: "online" });
+      } else {
+        addEvent({ code: "CA6000", week, day: "wed", start: "17:00", end: "19:00", title: "课堂", location: "LT28" });
+        if (week === 4 || week === 6) {
+          addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "14:30", title: week === 4 ? "Quiz #1" : "Quiz #2", location: "待老师确认", kind: "quiz" });
+          addEvent({ code: "CA6000", week, day: "sat", start: "15:00", end: "17:00", title: "课堂", location: "LT20" });
+        } else {
+          addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "17:00", title: "课堂", location: "LT20" });
+        }
+      }
+
+      addEvent({
+        code: "CA6002",
+        week,
+        day: "thu",
+        start: week === 1 ? "20:00" : "17:00",
+        end: week === 1 ? "22:00" : "19:00",
+        title: "课堂",
+        location: week === 1 ? "LF LT" : "LT28"
+      });
+      addEvent({ code: "CA6002", week, day: "sat", start: "09:00", end: "12:30", title: "课堂", location: "LT20" });
+    });
+
+    [7, 8, 9, 10, 11, 12].forEach((week) => {
+      addEvent({
+        code: "CA6001",
+        week,
+        day: "thu",
+        start: "17:00",
+        end: "19:00",
+        title: "课堂",
+        location: week === 12 ? "LT2A" : "LT22"
+      });
+      addEvent({ code: "CA6001", week, day: "sat", start: "13:30", end: "17:00", title: "课堂", location: "LT7" });
+
+      addEvent({
+        code: "CA6003",
+        week,
+        day: "tue",
+        start: "19:30",
+        end: "21:30",
+        title: "课堂",
+        location: week === 9 ? "LT28" : "LT29"
+      });
+      addEvent({ code: "CA6003", week, day: "sat", start: "09:00", end: "12:30", title: "课堂", location: "LT7" });
+    });
+
+    addWeeklyOnlineVideo([1, 2, 3, 4, 5, 6], "CA6000");
+    addWeeklyOnlineVideo([1, 2, 3, 4, 5, 6], "CA6002");
+    addWeeklyOnlineVideo([7, 8, 9, 10, 11, 12], "CA6001");
+    addWeeklyOnlineVideo([7, 8, 9, 10, 11, 12], "CA6003");
+
+    let currentWeek = getInitialWeek();
+
+    function getInitialWeek() {
+      const hash = Number(location.hash.replace("#week-", ""));
+      if (Number.isInteger(hash) && hash >= 1 && hash <= totalWeeks) {
+        return hash;
+      }
+
+      const today = new Date();
+      const diff = Math.floor((today - termStart) / (7 * 24 * 60 * 60 * 1000)) + 1;
+      return Math.min(totalWeeks, Math.max(1, diff));
+    }
+
+    function pad(value) {
+      return String(value).padStart(2, "0");
+    }
+
+    function formatDate(date) {
+      return `${date.getMonth() + 1}月${date.getDate()}日`;
+    }
+
+    function formatDayLabel(week, day) {
+      return `${day.label}<br><small>${formatDate(weekDate(week, day.key))}</small>`;
+    }
+
+    function toMinutes(time) {
+      const [hour, minute] = time.split(":").map(Number);
+      return hour * 60 + minute;
+    }
+
+    function eventOffset(time) {
+      return (toMinutes(time) - startHour * 60) / 60;
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      })[char]);
+    }
+
+    function eventsForWeek(week) {
+      return events
+        .filter((event) => event.week === week)
+        .sort((a, b) => {
+          const dayA = days.find((day) => day.key === a.day).offset;
+          const dayB = days.find((day) => day.key === b.day).offset;
+          const timeA = a.floating ? 0 : toMinutes(a.start);
+          const timeB = b.floating ? 0 : toMinutes(b.start);
+          return dayA - dayB || timeA - timeB || a.code.localeCompare(b.code);
+        });
+    }
+
+    function render() {
+      const weekStart = weekDate(currentWeek, "mon");
+      const weekEnd = weekDate(currentWeek, "sun");
+      const weekEvents = eventsForWeek(currentWeek);
+      const floatingEvents = weekEvents.filter((event) => event.floating);
+      const timedEvents = weekEvents.filter((event) => !event.floating);
+
+      document.getElementById("week-heading").textContent = `Week ${currentWeek}`;
+      document.getElementById("week-range").textContent = `${formatDate(weekStart)} - ${formatDate(weekEnd)}`;
+      document.getElementById("week-count").textContent = `第 ${currentWeek} / ${totalWeeks} 周`;
+      document.getElementById("prev-week").disabled = currentWeek === 1;
+      document.getElementById("next-week").disabled = currentWeek === totalWeeks;
+
+      document.getElementById("day-header").innerHTML = `<span></span>${days.map((day) => `<span>${formatDayLabel(currentWeek, day)}</span>`).join("")}`;
+
+      document.getElementById("allday-grid").innerHTML = `
+        <div class="allday-label">待看</div>
+        ${days.map((day) => {
+          const items = floatingEvents.filter((event) => event.day === day.key);
+          return `
+            <div class="allday-cell">
+              ${items.map(renderFloatingEvent).join("")}
+            </div>
+          `;
+        }).join("")}
+      `;
+
+      const hours = Array.from({ length: endHour - startHour + 1 }, (_, index) => startHour + index);
+      document.getElementById("time-grid").innerHTML = `
+        <div class="times">
+          ${hours.map((hour) => `<span class="time-label" style="--hour: ${hour - startHour}">${pad(hour)}:00</span>`).join("")}
+        </div>
+        ${days.map((day) => {
+          const dayEvents = timedEvents.filter((event) => event.day === day.key);
+          return `<div class="day-column">${dayEvents.map(renderTimedEvent).join("")}</div>`;
+        }).join("")}
+      `;
+
+      renderMobileWeek(weekEvents);
+      document.getElementById("empty-note").style.display = weekEvents.length ? "none" : "flex";
+      renderTabs();
+      location.hash = `week-${currentWeek}`;
+    }
+
+    function renderFloatingEvent(event) {
+      const course = courses[event.code];
+      return `
+        <article class="floating-card" style="--course-color: ${course.color}" title="${escapeHtml(course.title)}">
+          <strong>${event.code} · ${escapeHtml(event.title)}</strong>
+          <span>${escapeHtml(event.note || event.location)}</span>
+        </article>
+      `;
+    }
+
+    function renderTimedEvent(event) {
+      const course = courses[event.code];
+      const start = eventOffset(event.start);
+      const duration = (toMinutes(event.end) - toMinutes(event.start)) / 60;
+      const kind = event.kind ? ` ${event.kind}` : "";
+      return `
+        <article class="event${kind}" style="--course-color: ${course.color}; --start: ${start}; --duration: ${duration}" title="${event.code} ${escapeHtml(course.title)}">
+          <div>
+            <div class="event-code">${event.code}</div>
+            <div class="event-time">${event.start}-${event.end}</div>
+            <div class="event-title">${escapeHtml(event.title)}</div>
+          </div>
+          <div class="event-place">${escapeHtml(event.location)}</div>
+        </article>
+      `;
+    }
+
+    function renderMobileWeek(weekEvents) {
+      document.getElementById("mobile-week").innerHTML = days.map((day) => {
+        const items = weekEvents
+          .filter((event) => event.day === day.key)
+          .sort((a, b) => {
+            const timeA = a.floating ? 24 * 60 : toMinutes(a.start);
+            const timeB = b.floating ? 24 * 60 : toMinutes(b.start);
+            return timeA - timeB || a.code.localeCompare(b.code);
+          });
+        return `
+          <article class="mobile-day">
+            <h3><span>${day.label}</span><span class="mobile-date">${formatDate(weekDate(currentWeek, day.key))}</span></h3>
+            <div class="mobile-event-list">
+              ${items.length ? items.map(renderMobileEvent).join("") : '<div class="mobile-empty">无课</div>'}
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function renderMobileEvent(event) {
+      const course = courses[event.code];
+      const kind = event.kind ? ` ${event.kind}` : "";
+      const time = event.floating ? "待看" : `${event.start}-${event.end}`;
+      const place = event.floating ? event.note : event.location;
+      return `
+        <article class="mobile-event${kind}" style="--course-color: ${course.color}">
+          <div class="mobile-event-time">${escapeHtml(time)}</div>
+          <div class="mobile-event-body">
+            <strong>${event.code} · ${escapeHtml(event.title)}</strong>
+            <span>${escapeHtml(place)}</span>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderTabs() {
+      document.getElementById("week-tabs").innerHTML = Array.from({ length: totalWeeks }, (_, index) => {
+        const week = index + 1;
+        const active = week === currentWeek ? " active" : "";
+        return `<button class="week-tab${active}" type="button" data-week="${week}">W${week}</button>`;
+      }).join("");
+    }
+
+    function setWeek(week) {
+      currentWeek = Math.min(totalWeeks, Math.max(1, week));
+      render();
+    }
+
+    function renderLegend() {
+      document.getElementById("legend").innerHTML = Object.entries(courses).map(([code, course]) => `
+        <span class="legend-item"><span class="dot" style="--course-color: ${course.color}"></span>${code} · ${course.title}</span>
+      `).join("");
+    }
+
+    function addDays(date, daysToAdd) {
+      const copy = new Date(date);
+      copy.setDate(copy.getDate() + daysToAdd);
+      return copy;
+    }
+
+    function dateStamp(date) {
+      return `${date.getFullYear()}${pad(date.getMonth() + 1)}${pad(date.getDate())}`;
+    }
+
+    function dateTimeStamp(date, time) {
+      const [hour, minute] = time.split(":").map(Number);
+      return `${dateStamp(date)}T${pad(hour)}${pad(minute)}00`;
+    }
+
+    function icsEscape(value) {
+      return String(value)
+        .replace(/\\/g, "\\\\")
+        .replace(/\n/g, "\\n")
+        .replace(/,/g, "\\,")
+        .replace(/;/g, "\\;");
+    }
+
+    function buildIcs() {
+      const lines = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//NTU T1 Timetable//Codex//CN",
+        "CALSCALE:GREGORIAN",
+        "METHOD:PUBLISH",
+        "X-WR-CALNAME:NTU 2026 T1 课表",
+        "X-WR-TIMEZONE:Asia/Singapore"
+      ];
+
+      events.forEach((event, index) => {
+        const course = courses[event.code];
+        const date = weekDate(event.week, event.day);
+        const title = `${event.code} ${course.title} - ${event.title}`;
+        const description = [
+          `Week ${event.week}`,
+          `Lecturer: ${course.lecturer}`,
+          event.kind === "online" ? "Teams link is omitted from the public timetable." : "",
+          event.note || ""
+        ].filter(Boolean).join("\\n");
+
+        lines.push("BEGIN:VEVENT");
+        lines.push(`UID:ntu-2026-t1-${event.code.toLowerCase()}-w${event.week}-${event.day}-${index}@local`);
+        lines.push(`DTSTAMP:${dateTimeStamp(new Date(), `${pad(new Date().getHours())}:${pad(new Date().getMinutes())}`)}Z`);
+        lines.push(`SUMMARY:${icsEscape(title)}`);
+        lines.push(`DESCRIPTION:${icsEscape(description)}`);
+        lines.push(`LOCATION:${icsEscape(event.location)}`);
+
+        if (event.floating) {
+          lines.push(`DTSTART;VALUE=DATE:${dateStamp(date)}`);
+          lines.push(`DTEND;VALUE=DATE:${dateStamp(addDays(date, 1))}`);
+        } else {
+          lines.push(`DTSTART;TZID=Asia/Singapore:${dateTimeStamp(date, event.start)}`);
+          lines.push(`DTEND;TZID=Asia/Singapore:${dateTimeStamp(date, event.end)}`);
+        }
+
+        lines.push("END:VEVENT");
+      });
+
+      lines.push("END:VCALENDAR");
+      return lines.join("\r\n");
+    }
+
+    function downloadIcs() {
+      const blob = new Blob([buildIcs()], { type: "text/calendar;charset=utf-8" });
+      const link = document.createElement("a");
+      link.href = URL.createObjectURL(blob);
+      link.download = "ntu-2026-t1-timetable.ics";
+      document.body.appendChild(link);
+      link.click();
+      URL.revokeObjectURL(link.href);
+      link.remove();
+    }
+
+    document.getElementById("prev-week").addEventListener("click", () => setWeek(currentWeek - 1));
+    document.getElementById("next-week").addEventListener("click", () => setWeek(currentWeek + 1));
+    document.getElementById("today-week").addEventListener("click", () => setWeek(getInitialWeek()));
+    document.getElementById("export-ics").addEventListener("click", downloadIcs);
+    document.getElementById("week-tabs").addEventListener("click", (event) => {
+      const button = event.target.closest("[data-week]");
+      if (button) {
+        setWeek(Number(button.dataset.week));
+      }
+    });
+
+    renderLegend();
+    render();
+  </script>
+</body>
+</html>
