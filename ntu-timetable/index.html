@@ -246,6 +246,12 @@
       text-align: center;
     }
 
+    .day-header span.today {
+      border-color: #2f68e8;
+      background: #dbeafe;
+      color: #1d4ed8;
+    }
+
     .day-header span:first-child {
       border: 0;
       background: transparent;
@@ -276,6 +282,11 @@
       border: 1px dashed #d8e1ec;
       border-radius: var(--radius);
       background: #fafcff;
+    }
+
+    .allday-cell.today {
+      border-color: #93c5fd;
+      background: #eff6ff;
     }
 
     .floating-card {
@@ -332,6 +343,18 @@
         var(--line) calc(var(--time-height) - 1px),
         var(--line) var(--time-height)
       );
+    }
+
+    .day-column.today {
+      background:
+        linear-gradient(rgba(47, 104, 232, 0.08), rgba(47, 104, 232, 0.08)),
+        repeating-linear-gradient(
+          to bottom,
+          transparent 0,
+          transparent calc(var(--time-height) - 1px),
+          var(--line) calc(var(--time-height) - 1px),
+          var(--line) var(--time-height)
+        );
     }
 
     .event {
@@ -505,6 +528,11 @@
         font-size: 1.08rem;
       }
 
+      .mobile-day.today {
+        border-color: #2f68e8;
+        box-shadow: 0 0 0 3px rgba(47, 104, 232, 0.12), var(--shadow);
+      }
+
       .mobile-date {
         color: var(--muted);
         font-size: 0.92rem;
@@ -657,6 +685,7 @@
     const totalWeeks = 12;
     const startHour = 9;
     const endHour = 22;
+    const currentDateKey = singaporeDateKey(new Date());
 
     const days = [
       { key: "mon", label: "周一", offset: 0 },
@@ -671,21 +700,25 @@
     const courses = {
       CA6000: {
         title: "应用 AI 编程",
+        exportTitle: "Applied AI Programming",
         color: "#2f68e8",
         lecturer: "Assoc Prof Vun Chan Hua, Nicholas"
       },
       CA6001: {
         title: "AI 算法基础与应用",
+        exportTitle: "AI Algorithms Fundamentals and Application",
         color: "#bc5508",
         lecturer: "Dr Zhang Jiehuang"
       },
       CA6002: {
         title: "AI UX 与数据可视化设计原则",
+        exportTitle: "AI UX and Data Visualisation Design Principles",
         color: "#0f7f72",
         lecturer: "Assoc Prof Goh Wooi Boon"
       },
       CA6003: {
         title: "数据治理、准备与分析最佳实践",
+        exportTitle: "Best Practices in Data Governance, Preparation and Analytics",
         color: "#c91545",
         lecturer: "Dr Smitha K G"
       }
@@ -785,9 +818,28 @@
         return hash;
       }
 
+      return getCurrentWeek();
+    }
+
+    function getCurrentWeek() {
       const today = new Date();
       const diff = Math.floor((today - termStart) / (7 * 24 * 60 * 60 * 1000)) + 1;
       return Math.min(totalWeeks, Math.max(1, diff));
+    }
+
+    function singaporeDateKey(date) {
+      const parts = new Intl.DateTimeFormat("en", {
+        timeZone: "Asia/Singapore",
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit"
+      }).formatToParts(date);
+      const get = (type) => parts.find((part) => part.type === type).value;
+      return `${get("year")}-${get("month")}-${get("day")}`;
+    }
+
+    function isToday(week, dayKey) {
+      return singaporeDateKey(weekDate(week, dayKey)) === currentDateKey;
     }
 
     function pad(value) {
@@ -799,7 +851,8 @@
     }
 
     function formatDayLabel(week, day) {
-      return `${day.label}<br><small>${formatDate(weekDate(week, day.key))}</small>`;
+      const todayText = isToday(week, day.key) ? " · 今天" : "";
+      return `${day.label}<br><small>${formatDate(weekDate(week, day.key))}${todayText}</small>`;
     }
 
     function toMinutes(time) {
@@ -846,14 +899,17 @@
       document.getElementById("prev-week").disabled = currentWeek === 1;
       document.getElementById("next-week").disabled = currentWeek === totalWeeks;
 
-      document.getElementById("day-header").innerHTML = `<span></span>${days.map((day) => `<span>${formatDayLabel(currentWeek, day)}</span>`).join("")}`;
+      document.getElementById("day-header").innerHTML = `<span></span>${days.map((day) => {
+        const todayClass = isToday(currentWeek, day.key) ? ' class="today"' : "";
+        return `<span${todayClass}>${formatDayLabel(currentWeek, day)}</span>`;
+      }).join("")}`;
 
       document.getElementById("allday-grid").innerHTML = `
         <div class="allday-label">待看</div>
         ${days.map((day) => {
           const items = floatingEvents.filter((event) => event.day === day.key);
           return `
-            <div class="allday-cell">
+            <div class="allday-cell${isToday(currentWeek, day.key) ? " today" : ""}">
               ${items.map(renderFloatingEvent).join("")}
             </div>
           `;
@@ -867,7 +923,7 @@
         </div>
         ${days.map((day) => {
           const dayEvents = timedEvents.filter((event) => event.day === day.key);
-          return `<div class="day-column">${dayEvents.map(renderTimedEvent).join("")}</div>`;
+          return `<div class="day-column${isToday(currentWeek, day.key) ? " today" : ""}">${dayEvents.map(renderTimedEvent).join("")}</div>`;
         }).join("")}
       `;
 
@@ -914,7 +970,7 @@
             return timeA - timeB || a.code.localeCompare(b.code);
           });
         return `
-          <article class="mobile-day">
+          <article class="mobile-day${isToday(currentWeek, day.key) ? " today" : ""}">
             <h3><span>${day.label}</span><span class="mobile-date">${formatDate(weekDate(currentWeek, day.key))}</span></h3>
             <div class="mobile-event-list">
               ${items.length ? items.map(renderMobileEvent).join("") : '<div class="mobile-empty">无课</div>'}
@@ -982,6 +1038,36 @@
         .replace(/;/g, "\\;");
     }
 
+    function exportEventTitle(event) {
+      if (event.title === "课堂") {
+        return "Class";
+      }
+      if (event.title === "Teams 线上课") {
+        return "Teams online class";
+      }
+      if (event.title === "线上视频 1 小时") {
+        return "Online video (1 hour)";
+      }
+      return event.title;
+    }
+
+    function exportLocation(location) {
+      if (location === "待老师确认") {
+        return "TBC";
+      }
+      if (location === "Online Video") {
+        return "Online video";
+      }
+      return location;
+    }
+
+    function exportNote(note) {
+      if (note === "无固定时间") {
+        return "No fixed time";
+      }
+      return note;
+    }
+
     function buildIcs() {
       const lines = [
         "BEGIN:VCALENDAR",
@@ -989,19 +1075,21 @@
         "PRODID:-//NTU T1 Timetable//Codex//CN",
         "CALSCALE:GREGORIAN",
         "METHOD:PUBLISH",
-        "X-WR-CALNAME:NTU 2026 T1 课表",
+        "X-WR-CALNAME:NTU 2026 T1 Timetable",
         "X-WR-TIMEZONE:Asia/Singapore"
       ];
 
       events.forEach((event, index) => {
         const course = courses[event.code];
         const date = weekDate(event.week, event.day);
-        const title = `${event.code} ${course.title} - ${event.title}`;
+        const title = `${event.code} ${course.exportTitle} - ${exportEventTitle(event)}`;
+        const location = exportLocation(event.location);
         const description = [
           `Week ${event.week}`,
+          `Course: ${course.exportTitle}`,
           `Lecturer: ${course.lecturer}`,
           event.kind === "online" ? "Teams link is omitted from the public timetable." : "",
-          event.note || ""
+          exportNote(event.note || "")
         ].filter(Boolean).join("\\n");
 
         lines.push("BEGIN:VEVENT");
@@ -1009,7 +1097,7 @@
         lines.push(`DTSTAMP:${dateTimeStamp(new Date(), `${pad(new Date().getHours())}:${pad(new Date().getMinutes())}`)}Z`);
         lines.push(`SUMMARY:${icsEscape(title)}`);
         lines.push(`DESCRIPTION:${icsEscape(description)}`);
-        lines.push(`LOCATION:${icsEscape(event.location)}`);
+        lines.push(`LOCATION:${icsEscape(location)}`);
 
         if (event.floating) {
           lines.push(`DTSTART;VALUE=DATE:${dateStamp(date)}`);
@@ -1039,7 +1127,7 @@
 
     document.getElementById("prev-week").addEventListener("click", () => setWeek(currentWeek - 1));
     document.getElementById("next-week").addEventListener("click", () => setWeek(currentWeek + 1));
-    document.getElementById("today-week").addEventListener("click", () => setWeek(getInitialWeek()));
+    document.getElementById("today-week").addEventListener("click", () => setWeek(getCurrentWeek()));
     document.getElementById("export-ics").addEventListener("click", downloadIcs);
     document.getElementById("week-tabs").addEventListener("click", (event) => {
       const button = event.target.closest("[data-week]");
