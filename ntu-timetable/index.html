@@ -359,8 +359,8 @@
 
     .event {
       position: absolute;
-      left: 8px;
-      right: 8px;
+      left: calc(8px + var(--lane, 0) * ((100% - 16px) / var(--lanes, 1)));
+      width: calc((100% - 16px) / var(--lanes, 1) - 4px);
       top: calc(var(--start) * var(--time-height));
       height: max(52px, calc(var(--duration) * var(--time-height)));
       display: flex;
@@ -381,6 +381,10 @@
 
     .event.quiz {
       background: var(--violet);
+    }
+
+    .event.deadline {
+      background: #475569;
     }
 
     .event-code {
@@ -563,6 +567,10 @@
         border-left-color: var(--violet);
       }
 
+      .mobile-event.deadline {
+        border-left-color: var(--slate);
+      }
+
       .mobile-event-time {
         color: #344054;
         font-weight: 850;
@@ -677,7 +685,7 @@
   </main>
 
   <footer class="footer">
-    来源：AY26 T1 Timetable (20260728).pdf + CA6000 老师课程安排截图。公开页面不包含 Teams 会议链接或会议凭证。
+    来源：AY26 T1 Timetable (20260728).pdf + CA6000 老师课程安排截图 + CA6002 Delivery Schedule。公开页面不包含 Teams 会议链接或会议凭证。
   </footer>
 
   <script>
@@ -778,8 +786,22 @@
         title: "课堂",
         location: week === 1 ? "LF LT" : "LT28"
       });
-      addEvent({ code: "CA6002", week, day: "sat", start: "09:00", end: "12:30", title: "课堂", location: "LT20" });
+      addEvent({
+        code: "CA6002",
+        week,
+        day: "sat",
+        start: "09:00",
+        end: "12:30",
+        title: week === 4 ? "Quiz #1 + 课堂" : week === 6 ? "Quiz #2 + Presentation" : "课堂",
+        location: week === 4 || week === 6 ? "LT20 / Quiz T.B.D." : "LT20"
+      });
     });
+
+    addEvent({ code: "CA6002", week: 4, day: "sat", start: "09:10", end: "09:40", title: "Quiz #1", location: "T.B.D.", kind: "quiz" });
+    addEvent({ code: "CA6002", week: 5, day: "mon", start: "12:00", end: "12:15", title: "作业截止", location: "Online submission", kind: "deadline" });
+    addEvent({ code: "CA6002", week: 5, day: "sat", start: "12:00", end: "12:15", title: "Assignment submission 截止", location: "Online submission", kind: "deadline" });
+    addEvent({ code: "CA6002", week: 6, day: "sat", start: "09:10", end: "09:40", title: "Quiz #2", location: "T.B.D.", kind: "quiz" });
+    addEvent({ code: "CA6002", week: 6, day: "sat", start: "10:30", end: "10:45", title: "Peer review 截止", location: "Online submission", kind: "deadline" });
 
     [7, 8, 9, 10, 11, 12].forEach((week) => {
       addEvent({
@@ -922,7 +944,7 @@
           ${hours.map((hour) => `<span class="time-label" style="--hour: ${hour - startHour}">${pad(hour)}:00</span>`).join("")}
         </div>
         ${days.map((day) => {
-          const dayEvents = timedEvents.filter((event) => event.day === day.key);
+          const dayEvents = layoutDayEvents(timedEvents.filter((event) => event.day === day.key));
           return `<div class="day-column${isToday(currentWeek, day.key) ? " today" : ""}">${dayEvents.map(renderTimedEvent).join("")}</div>`;
         }).join("")}
       `;
@@ -949,7 +971,7 @@
       const duration = (toMinutes(event.end) - toMinutes(event.start)) / 60;
       const kind = event.kind ? ` ${event.kind}` : "";
       return `
-        <article class="event${kind}" style="--course-color: ${course.color}; --start: ${start}; --duration: ${duration}" title="${event.code} ${escapeHtml(course.title)}">
+        <article class="event${kind}" style="--course-color: ${course.color}; --start: ${start}; --duration: ${duration}; --lane: ${event.lane || 0}; --lanes: ${event.lanes || 1}" title="${event.code} ${escapeHtml(course.title)}">
           <div>
             <div class="event-code">${event.code}</div>
             <div class="event-time">${event.start}-${event.end}</div>
@@ -958,6 +980,36 @@
           <div class="event-place">${escapeHtml(event.location)}</div>
         </article>
       `;
+    }
+
+    function layoutDayEvents(dayEvents) {
+      const sorted = dayEvents
+        .map((event) => ({ ...event }))
+        .sort((a, b) => toMinutes(a.start) - toMinutes(b.start) || toMinutes(b.end) - toMinutes(a.end));
+      const active = [];
+
+      sorted.forEach((event) => {
+        const start = toMinutes(event.start);
+        for (let index = active.length - 1; index >= 0; index -= 1) {
+          if (toMinutes(active[index].end) <= start) {
+            active.splice(index, 1);
+          }
+        }
+
+        const usedLanes = new Set(active.map((item) => item.lane));
+        let lane = 0;
+        while (usedLanes.has(lane)) {
+          lane += 1;
+        }
+        event.lane = lane;
+        active.push(event);
+        const lanes = Math.max(...active.map((item) => item.lane)) + 1;
+        active.forEach((item) => {
+          item.lanes = Math.max(item.lanes || 1, lanes);
+        });
+      });
+
+      return sorted;
     }
 
     function renderMobileWeek(weekEvents) {
@@ -1042,11 +1094,26 @@
       if (event.title === "课堂") {
         return "Class";
       }
+      if (event.title === "Quiz #1 + 课堂") {
+        return "Quiz #1 and class";
+      }
+      if (event.title === "Quiz #2 + Presentation") {
+        return "Quiz #2 and selected assignment presentation";
+      }
       if (event.title === "Teams 线上课") {
         return "Teams online class";
       }
       if (event.title === "线上视频 1 小时") {
         return "Online video (1 hour)";
+      }
+      if (event.title === "作业截止") {
+        return "Assignment deadline";
+      }
+      if (event.title === "Assignment submission 截止") {
+        return "Assignment submission deadline";
+      }
+      if (event.title === "Peer review 截止") {
+        return "Peer review submission deadline";
       }
       return event.title;
     }
@@ -1054,6 +1121,12 @@
     function exportLocation(location) {
       if (location === "待老师确认") {
         return "TBC";
+      }
+      if (location === "T.B.D.") {
+        return "TBC";
+      }
+      if (location === "LT20 / Quiz T.B.D.") {
+        return "LT20 / Quiz venue TBC";
       }
       if (location === "Online Video") {
         return "Online video";
