@@ -649,7 +649,8 @@
         <p class="meta">CA6000-CA6003 · 12 AU · 按周翻页查看</p>
       </section>
       <div class="actions">
-        <button class="button primary" id="export-ics" type="button">导出 Apple 日历</button>
+        <a class="button primary" href="webcal://sjhpcjs.github.io/ntu-timetable/ntu-2026-t1-timetable.ics">订阅 Apple 日历</a>
+        <button class="button" id="export-ics" type="button">下载 .ics</button>
         <button class="button" id="today-week" type="button">回到当前周</button>
       </div>
     </div>
@@ -685,7 +686,7 @@
   </main>
 
   <footer class="footer">
-    来源：AY26 T1 Timetable (20260728).pdf + CA6000 老师课程安排截图 + CA6002 Delivery Schedule。公开页面不包含 Teams 会议链接或会议凭证。
+    来源：AY26 T1 Timetable (20260728).pdf + CA6000 老师课程安排截图 + CA6002 Delivery Schedule + Mid-week Class Swap announcement。公开页面不包含 Teams 会议链接或会议凭证。
   </footer>
 
   <script>
@@ -765,7 +766,7 @@
         addEvent({ code: "CA6000", week, day: "wed", start: "20:00", end: "22:00", title: "课堂", location: "LF LT" });
         addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "17:00", title: "课堂", location: "LT20" });
       } else if (week === 3) {
-        addEvent({ code: "CA6000", week, day: "wed", start: "17:00", end: "19:00", title: "Teams 线上课", location: "Microsoft Teams", kind: "online" });
+        addEvent({ code: "CA6000", week, day: "thu", start: "17:00", end: "19:00", title: "Online only 线上课", location: "Online only", kind: "online" });
         addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "17:00", title: "Teams 线上课", location: "Microsoft Teams", kind: "online" });
       } else {
         addEvent({ code: "CA6000", week, day: "wed", start: "17:00", end: "19:00", title: "课堂", location: "LT28" });
@@ -780,10 +781,10 @@
       addEvent({
         code: "CA6002",
         week,
-        day: "thu",
+        day: week === 3 ? "wed" : "thu",
         start: week === 1 ? "20:00" : "17:00",
         end: week === 1 ? "22:00" : "19:00",
-        title: "课堂",
+        title: week === 3 ? "Hybrid 课堂" : "课堂",
         location: week === 1 ? "LF LT" : "LT28"
       });
       addEvent({
@@ -1102,6 +1103,12 @@
       }
       if (event.title === "Teams 线上课") {
         return "Teams online class";
+      }
+      if (event.title === "Online only 线上课") {
+        return "Online-only class";
+      }
+      if (event.title === "Hybrid 课堂") {
+        return "Hybrid class";
       }
       if (event.title === "线上视频 1 小时") {
         return "Online video (1 hour)";
