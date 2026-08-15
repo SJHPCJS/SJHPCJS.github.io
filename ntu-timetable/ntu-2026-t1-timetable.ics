@@ -7,7 +7,7 @@ X-WR-CALNAME:NTU 2026 T1 Timetable
 X-WR-TIMEZONE:Asia/Singapore
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w1-wed-0@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 1\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LF LT
@@ -16,7 +16,7 @@ DTEND;TZID=Asia/Singapore:20260805T220000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w1-sat-1@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 1\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT20
@@ -25,7 +25,7 @@ DTEND;TZID=Asia/Singapore:20260808T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w1-thu-2@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 1\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LF LT
@@ -34,7 +34,7 @@ DTEND;TZID=Asia/Singapore:20260806T220000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w1-sat-3@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 1\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT20
@@ -43,7 +43,7 @@ DTEND;TZID=Asia/Singapore:20260808T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w2-wed-4@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 2\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT28
@@ -52,7 +52,7 @@ DTEND;TZID=Asia/Singapore:20260812T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w2-sat-5@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 2\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT20
@@ -61,7 +61,7 @@ DTEND;TZID=Asia/Singapore:20260815T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w2-thu-6@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 2\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT28
@@ -70,7 +70,7 @@ DTEND;TZID=Asia/Singapore:20260813T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w2-sat-7@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 2\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT20
@@ -79,25 +79,25 @@ DTEND;TZID=Asia/Singapore:20260815T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w3-thu-8@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Online-only class
-DESCRIPTION:Week 3\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nTeams link is omitted from the public timetable.
+DESCRIPTION:Week 3\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nOnline link is omitted from the public timetable.
 LOCATION:Online only
 DTSTART;TZID=Asia/Singapore:20260820T170000
 DTEND;TZID=Asia/Singapore:20260820T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w3-sat-9@local
-DTSTAMP:20260815T090900Z
-SUMMARY:CA6000 Applied AI Programming - Teams online class
-DESCRIPTION:Week 3\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nTeams link is omitted from the public timetable.
-LOCATION:Microsoft Teams
+DTSTAMP:20260815T133300Z
+SUMMARY:CA6000 Applied AI Programming - Online-only class
+DESCRIPTION:Week 3\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nOnline link is omitted from the public timetable.
+LOCATION:Online only
 DTSTART;TZID=Asia/Singapore:20260822T133000
 DTEND;TZID=Asia/Singapore:20260822T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w3-wed-10@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Hybrid class
 DESCRIPTION:Week 3\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT28
@@ -106,7 +106,7 @@ DTEND;TZID=Asia/Singapore:20260819T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w3-sat-11@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 3\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT20
@@ -115,7 +115,7 @@ DTEND;TZID=Asia/Singapore:20260822T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w4-wed-12@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 4\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT28
@@ -124,7 +124,7 @@ DTEND;TZID=Asia/Singapore:20260826T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w4-sat-13@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Quiz #1
 DESCRIPTION:Week 4\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:TBC
@@ -133,7 +133,7 @@ DTEND;TZID=Asia/Singapore:20260829T143000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w4-sat-14@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 4\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT20
@@ -142,7 +142,7 @@ DTEND;TZID=Asia/Singapore:20260829T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w4-thu-15@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 4\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT28
@@ -151,7 +151,7 @@ DTEND;TZID=Asia/Singapore:20260827T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w4-sat-16@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Quiz #1 and class
 DESCRIPTION:Week 4\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT20 / Quiz venue TBC
@@ -160,7 +160,7 @@ DTEND;TZID=Asia/Singapore:20260829T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w5-wed-17@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 5\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT28
@@ -169,7 +169,7 @@ DTEND;TZID=Asia/Singapore:20260902T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w5-sat-18@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 5\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT20
@@ -178,7 +178,7 @@ DTEND;TZID=Asia/Singapore:20260905T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w5-thu-19@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 5\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT28
@@ -187,7 +187,7 @@ DTEND;TZID=Asia/Singapore:20260903T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w5-sat-20@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 5\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT20
@@ -196,7 +196,7 @@ DTEND;TZID=Asia/Singapore:20260905T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w6-wed-21@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 6\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT28
@@ -205,7 +205,7 @@ DTEND;TZID=Asia/Singapore:20260909T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w6-sat-22@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Quiz #2
 DESCRIPTION:Week 6\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:TBC
@@ -214,7 +214,7 @@ DTEND;TZID=Asia/Singapore:20260912T143000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w6-sat-23@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Class
 DESCRIPTION:Week 6\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas
 LOCATION:LT20
@@ -223,7 +223,7 @@ DTEND;TZID=Asia/Singapore:20260912T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w6-thu-24@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Class
 DESCRIPTION:Week 6\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT28
@@ -232,7 +232,7 @@ DTEND;TZID=Asia/Singapore:20260910T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w6-sat-25@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Quiz #2 and selected assignment presentation
 DESCRIPTION:Week 6\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:LT20 / Quiz venue TBC
@@ -241,7 +241,7 @@ DTEND;TZID=Asia/Singapore:20260912T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w4-sat-26@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Quiz #1
 DESCRIPTION:Week 4\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:TBC
@@ -250,7 +250,7 @@ DTEND;TZID=Asia/Singapore:20260829T094000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w5-mon-27@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Assignment deadline
 DESCRIPTION:Week 5\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:Online submission
@@ -259,7 +259,7 @@ DTEND;TZID=Asia/Singapore:20260831T121500
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w5-sat-28@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Assignment submission deadline
 DESCRIPTION:Week 5\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:Online submission
@@ -268,7 +268,7 @@ DTEND;TZID=Asia/Singapore:20260905T121500
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w6-sat-29@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Quiz #2
 DESCRIPTION:Week 6\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:TBC
@@ -277,7 +277,7 @@ DTEND;TZID=Asia/Singapore:20260912T094000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w6-sat-30@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Peer review submission deadline
 DESCRIPTION:Week 6\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon
 LOCATION:Online submission
@@ -286,7 +286,7 @@ DTEND;TZID=Asia/Singapore:20260912T104500
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w7-thu-31@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 7\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT22
@@ -295,7 +295,7 @@ DTEND;TZID=Asia/Singapore:20260917T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w7-sat-32@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 7\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT7
@@ -304,7 +304,7 @@ DTEND;TZID=Asia/Singapore:20260919T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w7-tue-33@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 7\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT29
@@ -313,7 +313,7 @@ DTEND;TZID=Asia/Singapore:20260915T213000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w7-sat-34@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 7\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT7
@@ -322,7 +322,7 @@ DTEND;TZID=Asia/Singapore:20260919T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w8-thu-35@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 8\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT22
@@ -331,7 +331,7 @@ DTEND;TZID=Asia/Singapore:20260924T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w8-sat-36@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 8\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT7
@@ -340,7 +340,7 @@ DTEND;TZID=Asia/Singapore:20260926T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w8-tue-37@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 8\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT29
@@ -349,7 +349,7 @@ DTEND;TZID=Asia/Singapore:20260922T213000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w8-sat-38@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 8\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT7
@@ -358,7 +358,7 @@ DTEND;TZID=Asia/Singapore:20260926T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w9-thu-39@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 9\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT22
@@ -367,7 +367,7 @@ DTEND;TZID=Asia/Singapore:20261001T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w9-sat-40@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 9\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT7
@@ -376,7 +376,7 @@ DTEND;TZID=Asia/Singapore:20261003T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w9-tue-41@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 9\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT28
@@ -385,7 +385,7 @@ DTEND;TZID=Asia/Singapore:20260929T213000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w9-sat-42@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 9\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT7
@@ -394,7 +394,7 @@ DTEND;TZID=Asia/Singapore:20261003T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w10-thu-43@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 10\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT22
@@ -403,7 +403,7 @@ DTEND;TZID=Asia/Singapore:20261008T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w10-sat-44@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 10\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT7
@@ -412,7 +412,7 @@ DTEND;TZID=Asia/Singapore:20261010T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w10-tue-45@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 10\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT29
@@ -421,7 +421,7 @@ DTEND;TZID=Asia/Singapore:20261006T213000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w10-sat-46@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 10\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT7
@@ -430,7 +430,7 @@ DTEND;TZID=Asia/Singapore:20261010T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w11-thu-47@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 11\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT22
@@ -439,7 +439,7 @@ DTEND;TZID=Asia/Singapore:20261015T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w11-sat-48@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 11\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT7
@@ -448,7 +448,7 @@ DTEND;TZID=Asia/Singapore:20261017T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w11-tue-49@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 11\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT29
@@ -457,7 +457,7 @@ DTEND;TZID=Asia/Singapore:20261013T213000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w11-sat-50@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 11\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT7
@@ -466,7 +466,7 @@ DTEND;TZID=Asia/Singapore:20261017T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w12-thu-51@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 12\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT2A
@@ -475,7 +475,7 @@ DTEND;TZID=Asia/Singapore:20261022T190000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w12-sat-52@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Class
 DESCRIPTION:Week 12\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang
 LOCATION:LT7
@@ -484,7 +484,7 @@ DTEND;TZID=Asia/Singapore:20261024T170000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w12-tue-53@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 12\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT29
@@ -493,7 +493,7 @@ DTEND;TZID=Asia/Singapore:20261020T213000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w12-sat-54@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Class
 DESCRIPTION:Week 12\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G
 LOCATION:LT7
@@ -502,7 +502,7 @@ DTEND;TZID=Asia/Singapore:20261024T123000
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w1-sun-55@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Online video (1 hour)
 DESCRIPTION:Week 1\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nNo fixed time
 LOCATION:Online video
@@ -511,7 +511,7 @@ DTEND;VALUE=DATE:20260810
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w2-sun-56@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Online video (1 hour)
 DESCRIPTION:Week 2\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nNo fixed time
 LOCATION:Online video
@@ -520,7 +520,7 @@ DTEND;VALUE=DATE:20260817
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w3-sun-57@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Online video (1 hour)
 DESCRIPTION:Week 3\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nNo fixed time
 LOCATION:Online video
@@ -529,7 +529,7 @@ DTEND;VALUE=DATE:20260824
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w4-sun-58@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Online video (1 hour)
 DESCRIPTION:Week 4\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nNo fixed time
 LOCATION:Online video
@@ -538,7 +538,7 @@ DTEND;VALUE=DATE:20260831
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w5-sun-59@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Online video (1 hour)
 DESCRIPTION:Week 5\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nNo fixed time
 LOCATION:Online video
@@ -547,7 +547,7 @@ DTEND;VALUE=DATE:20260907
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6000-w6-sun-60@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6000 Applied AI Programming - Online video (1 hour)
 DESCRIPTION:Week 6\\nCourse: Applied AI Programming\\nLecturer: Assoc Prof Vun Chan Hua\, Nicholas\\nNo fixed time
 LOCATION:Online video
@@ -556,7 +556,7 @@ DTEND;VALUE=DATE:20260914
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w1-sun-61@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Online video (1 hour)
 DESCRIPTION:Week 1\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon\\nNo fixed time
 LOCATION:Online video
@@ -565,7 +565,7 @@ DTEND;VALUE=DATE:20260810
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w2-sun-62@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Online video (1 hour)
 DESCRIPTION:Week 2\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon\\nNo fixed time
 LOCATION:Online video
@@ -574,7 +574,7 @@ DTEND;VALUE=DATE:20260817
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w3-sun-63@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Online video (1 hour)
 DESCRIPTION:Week 3\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon\\nNo fixed time
 LOCATION:Online video
@@ -583,7 +583,7 @@ DTEND;VALUE=DATE:20260824
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w4-sun-64@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Online video (1 hour)
 DESCRIPTION:Week 4\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon\\nNo fixed time
 LOCATION:Online video
@@ -592,7 +592,7 @@ DTEND;VALUE=DATE:20260831
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w5-sun-65@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Online video (1 hour)
 DESCRIPTION:Week 5\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon\\nNo fixed time
 LOCATION:Online video
@@ -601,7 +601,7 @@ DTEND;VALUE=DATE:20260907
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6002-w6-sun-66@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6002 AI UX and Data Visualisation Design Principles - Online video (1 hour)
 DESCRIPTION:Week 6\\nCourse: AI UX and Data Visualisation Design Principles\\nLecturer: Assoc Prof Goh Wooi Boon\\nNo fixed time
 LOCATION:Online video
@@ -610,7 +610,7 @@ DTEND;VALUE=DATE:20260914
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w7-sun-67@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Online video (1 hour)
 DESCRIPTION:Week 7\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang\\nNo fixed time
 LOCATION:Online video
@@ -619,7 +619,7 @@ DTEND;VALUE=DATE:20260921
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w8-sun-68@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Online video (1 hour)
 DESCRIPTION:Week 8\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang\\nNo fixed time
 LOCATION:Online video
@@ -628,7 +628,7 @@ DTEND;VALUE=DATE:20260928
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w9-sun-69@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Online video (1 hour)
 DESCRIPTION:Week 9\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang\\nNo fixed time
 LOCATION:Online video
@@ -637,7 +637,7 @@ DTEND;VALUE=DATE:20261005
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w10-sun-70@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Online video (1 hour)
 DESCRIPTION:Week 10\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang\\nNo fixed time
 LOCATION:Online video
@@ -646,7 +646,7 @@ DTEND;VALUE=DATE:20261012
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w11-sun-71@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Online video (1 hour)
 DESCRIPTION:Week 11\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang\\nNo fixed time
 LOCATION:Online video
@@ -655,7 +655,7 @@ DTEND;VALUE=DATE:20261019
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6001-w12-sun-72@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6001 AI Algorithms Fundamentals and Application - Online video (1 hour)
 DESCRIPTION:Week 12\\nCourse: AI Algorithms Fundamentals and Application\\nLecturer: Dr Zhang Jiehuang\\nNo fixed time
 LOCATION:Online video
@@ -664,7 +664,7 @@ DTEND;VALUE=DATE:20261026
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w7-sun-73@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Online video (1 hour)
 DESCRIPTION:Week 7\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G\\nNo fixed time
 LOCATION:Online video
@@ -673,7 +673,7 @@ DTEND;VALUE=DATE:20260921
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w8-sun-74@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Online video (1 hour)
 DESCRIPTION:Week 8\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G\\nNo fixed time
 LOCATION:Online video
@@ -682,7 +682,7 @@ DTEND;VALUE=DATE:20260928
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w9-sun-75@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Online video (1 hour)
 DESCRIPTION:Week 9\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G\\nNo fixed time
 LOCATION:Online video
@@ -691,7 +691,7 @@ DTEND;VALUE=DATE:20261005
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w10-sun-76@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Online video (1 hour)
 DESCRIPTION:Week 10\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G\\nNo fixed time
 LOCATION:Online video
@@ -700,7 +700,7 @@ DTEND;VALUE=DATE:20261012
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w11-sun-77@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Online video (1 hour)
 DESCRIPTION:Week 11\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G\\nNo fixed time
 LOCATION:Online video
@@ -709,7 +709,7 @@ DTEND;VALUE=DATE:20261019
 END:VEVENT
 BEGIN:VEVENT
 UID:ntu-2026-t1-ca6003-w12-sun-78@local
-DTSTAMP:20260815T090900Z
+DTSTAMP:20260815T133300Z
 SUMMARY:CA6003 Best Practices in Data Governance\, Preparation and Analytics - Online video (1 hour)
 DESCRIPTION:Week 12\\nCourse: Best Practices in Data Governance\, Preparation and Analytics\\nLecturer: Dr Smitha K G\\nNo fixed time
 LOCATION:Online video

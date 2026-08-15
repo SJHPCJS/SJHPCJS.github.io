@@ -767,7 +767,7 @@
         addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "17:00", title: "课堂", location: "LT20" });
       } else if (week === 3) {
         addEvent({ code: "CA6000", week, day: "thu", start: "17:00", end: "19:00", title: "Online only 线上课", location: "Online only", kind: "online" });
-        addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "17:00", title: "Teams 线上课", location: "Microsoft Teams", kind: "online" });
+        addEvent({ code: "CA6000", week, day: "sat", start: "13:30", end: "17:00", title: "Online only 线上课", location: "Online only", kind: "online" });
       } else {
         addEvent({ code: "CA6000", week, day: "wed", start: "17:00", end: "19:00", title: "课堂", location: "LT28" });
         if (week === 4 || week === 6) {
@@ -1168,7 +1168,7 @@
           `Week ${event.week}`,
           `Course: ${course.exportTitle}`,
           `Lecturer: ${course.lecturer}`,
-          event.kind === "online" ? "Teams link is omitted from the public timetable." : "",
+          event.kind === "online" ? "Online link is omitted from the public timetable." : "",
           exportNote(event.note || "")
         ].filter(Boolean).join("\\n");
 
