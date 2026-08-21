@@ -5,32 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Jiashuo — Personal Page</title>
     <meta name="description" content="Personal page of Jiashuo Chang — projects, publications, and resume."/>
-    <link rel="canonical" href="https://example.com/"/>
+    <link rel="canonical" href="https://sjhpcjs.github.io/"/>
     <meta name="theme-color" content="#111111"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Jiashuo — Personal Page"/>
     <meta property="og:description" content="Projects, publications, and resume."/>
     <meta property="og:image" content="hero.png"/>
-    <meta property="og:url" content="https://example.com/"/>
+    <meta property="og:url" content="https://sjhpcjs.github.io/"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:title" content="Jiashuo — Personal Page"/>
     <meta name="twitter:description" content="Projects, publications, and resume."/>
     <meta name="twitter:image" content="hero.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+          rel="stylesheet"/>
 
     <style>
         :root {
-            --bg: #fafafa;
-            --text: #111;
-            --muted: #555;
-            --border: #e5e7eb;
-            --brand: #111;
-            --card-bg: #ffffff;
-            --btn-bg: #ffffff;
-            --btn-text: #111111;
-            --btn-hover-bg: #111111;
-            --btn-hover-text: #ffffff;
-            --shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-            --radius: 14px;
+            --bg: #050b17;
+            --bg-soft: #0b1830;
+            --text: #edf4ff;
+            --muted: #9eb2d3;
+            --border: rgba(140, 180, 255, 0.24);
+            --brand: #7af7d7;
+            --brand-2: #75a6ff;
+            --card-bg: rgba(7, 20, 39, 0.72);
+            --btn-bg: linear-gradient(135deg, #7af7d7 0%, #75a6ff 100%);
+            --btn-text: #051021;
+            --btn-hover-bg: linear-gradient(135deg, #9affde 0%, #9cbcff 100%);
+            --btn-hover-text: #041022;
+            --shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+            --radius: 16px;
         }
 
         html {
@@ -55,33 +61,106 @@
             margin: 0;
             background: var(--bg);
             color: var(--text);
-            font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+            font-family: "Manrope", "Segoe UI", sans-serif;
             line-height: 1.6;
             font-size: 16px;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
         }
 
         a {
-            color: #2563eb;
+            color: #8ed3ff;
             text-decoration: none;
+            transition: color .2s ease;
         }
 
         a:hover, a:focus-visible {
             text-decoration: underline;
+            color: #c4e8ff;
         }
 
         :focus-visible {
-            outline: 3px solid #2563eb;
+            outline: 3px solid #7af7d7;
             outline-offset: 2px;
         }
 
-        /* Hero */
+        #scroll-progress {
+            position: fixed;
+            left: 0;
+            top: 0;
+            height: 3px;
+            width: 100%;
+            transform-origin: left center;
+            transform: scaleX(0);
+            background: linear-gradient(90deg, #7af7d7, #75a6ff, #ffa47b);
+            z-index: 60;
+            box-shadow: 0 0 18px rgba(117, 166, 255, 0.8);
+        }
+
+        .ambient-bg {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+            overflow: hidden;
+            background:
+                    radial-gradient(1200px 700px at 8% -10%, rgba(117, 166, 255, 0.28), transparent 68%),
+                    radial-gradient(900px 600px at 90% 10%, rgba(122, 247, 215, 0.22), transparent 65%),
+                    linear-gradient(165deg, #040812 0%, #08152a 50%, #06111f 100%);
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(2px);
+            opacity: 0.45;
+            animation: float 14s ease-in-out infinite;
+        }
+
+        .orb-a {
+            width: 340px;
+            height: 340px;
+            left: -80px;
+            top: 20vh;
+            background: radial-gradient(circle at 30% 30%, rgba(122, 247, 215, 0.8), rgba(122, 247, 215, 0.08));
+        }
+
+        .orb-b {
+            width: 420px;
+            height: 420px;
+            right: -140px;
+            top: 52vh;
+            animation-delay: -3.5s;
+            background: radial-gradient(circle at 40% 40%, rgba(117, 166, 255, 0.9), rgba(117, 166, 255, 0.1));
+        }
+
+        .orb-c {
+            width: 280px;
+            height: 280px;
+            left: 55%;
+            top: -120px;
+            animation-delay: -7s;
+            background: radial-gradient(circle at 50% 50%, rgba(255, 164, 123, 0.55), rgba(255, 164, 123, 0.06));
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translate3d(0, 0, 0);
+            }
+            50% {
+                transform: translate3d(0, -18px, 0);
+            }
+        }
+
         #hero {
             position: relative;
             color: #ffffff;
             background: #111 url('hero.png') center/cover no-repeat;
             text-align: center;
-            padding: 72px 20px;
+            padding: 104px 20px 84px;
             overflow: hidden;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         #lang-switch {
@@ -91,11 +170,11 @@
             z-index: 2;
             display: inline-flex;
             gap: 6px;
-            background: rgba(17, 17, 17, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(5, 15, 29, 0.62);
+            border: 1px solid rgba(159, 200, 255, 0.32);
             border-radius: 999px;
             padding: 4px;
-            backdrop-filter: blur(4px);
+            backdrop-filter: blur(8px);
         }
 
         #lang-switch button {
@@ -110,15 +189,17 @@
         }
 
         #lang-switch button[aria-pressed="true"] {
-            background: #ffffff;
-            color: #111;
+            background: linear-gradient(120deg, #7af7d7, #8ab2ff);
+            color: #061125;
         }
 
         #hero::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45));
+            background:
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.28), rgba(3, 10, 20, 0.66)),
+                    linear-gradient(120deg, rgba(8, 22, 44, 0.2), rgba(22, 13, 39, 0.35));
             pointer-events: none;
         }
 
@@ -131,19 +212,38 @@
 
         #hero h1 {
             margin: 0 0 10px;
-            font-size: clamp(28px, 5vw, 44px);
-            letter-spacing: 0.2px;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(32px, 6vw, 58px);
+            letter-spacing: 0.6px;
+            text-shadow: 0 8px 26px rgba(0, 0, 0, 0.45);
         }
 
-        #hero p {
-            display: none;
+        #hero-kicker {
+            margin: 0;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(13px, 2vw, 16px);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(225, 244, 255, 0.78);
+        }
+
+        #hero-subtitle {
+            margin: 10px 0 0;
+            font-size: clamp(16px, 2.5vw, 24px);
+            font-weight: 600;
+            color: #d8ecff;
+        }
+
+        #hero-typing {
+            color: #91ffe0;
+            text-shadow: 0 0 12px rgba(122, 247, 215, 0.45);
         }
 
         .cta {
             display: inline-flex;
             flex-wrap: wrap;
             gap: 12px;
-            margin-top: 10px;
+            margin-top: 22px;
         }
 
         .btn {
@@ -152,11 +252,12 @@
             min-height: 42px;
             padding: 10px 16px;
             border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(155, 218, 255, 0.22);
             background: var(--btn-bg);
             color: var(--btn-text);
             font-weight: 600;
             box-shadow: var(--shadow);
+            transition: transform .22s ease, box-shadow .22s ease, background .22s ease, color .22s ease;
         }
 
         .btn:hover, .btn:focus-visible {
@@ -164,27 +265,86 @@
             color: var(--btn-hover-text);
             border-color: transparent;
             text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 16px 34px rgba(122, 247, 215, 0.16);
         }
 
         .btn.invert {
-            background: transparent;
+            background: rgba(7, 18, 34, 0.56);
             color: #ffffff;
-            border-color: rgba(255, 255, 255, 0.6);
+            border-color: rgba(175, 222, 255, 0.45);
+            backdrop-filter: blur(6px);
         }
 
         .btn.invert:hover, .btn.invert:focus-visible {
-            background: #ffffff;
-            color: #111111;
+            background: rgba(11, 26, 49, 0.85);
+            color: #dff0ff;
         }
 
-        /* Main */
+        #quick-nav {
+            position: sticky;
+            top: 10px;
+            z-index: 40;
+            width: min(920px, calc(100vw - 24px));
+            margin: -30px auto 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 9px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(6, 18, 35, 0.72);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.22);
+        }
+
+        #quick-nav a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 34px;
+            padding: 6px 14px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            font-size: 0.92rem;
+            color: #d9ebff;
+            text-decoration: none;
+            transition: all .2s ease;
+        }
+
+        #quick-nav a:hover, #quick-nav a:focus-visible, #quick-nav a.active {
+            background: rgba(122, 247, 215, 0.13);
+            border-color: rgba(122, 247, 215, 0.35);
+            color: #d6fff2;
+        }
+
         #main {
             max-width: 1200px;
-            margin: 28px auto;
+            margin: 28px auto 20px;
             padding: 0 16px;
         }
 
-        /* Highlight Projects: horizontal scroll */
+        #projects,
+        section.block,
+        #about {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        #projects,
+        #about,
+        section.block {
+            padding: 18px;
+        }
+
+        #projects {
+            margin-top: 26px;
+        }
+
         #projects header {
             display: flex;
             align-items: baseline;
@@ -211,7 +371,7 @@
         }
 
         .carousel::-webkit-scrollbar-thumb {
-            background: #d1d5db;
+            background: linear-gradient(90deg, rgba(122, 247, 215, 0.55), rgba(117, 166, 255, 0.55));
             border-radius: 999px;
         }
 
@@ -226,17 +386,38 @@
             display: flex;
             flex-direction: column;
             scroll-snap-align: start;
-            transition: transform .15s ease, box-shadow .15s ease;
+            transition: transform .16s ease, box-shadow .16s ease, border-color .18s ease;
+            position: relative;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        .project::after {
+            content: "";
+            position: absolute;
+            inset: -1px;
+            border-radius: inherit;
+            pointer-events: none;
+            background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%),
+            rgba(117, 166, 255, 0.3),
+            transparent 43%);
+            opacity: 0;
+            transition: opacity .2s ease;
         }
 
         .project:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 22px 34px rgba(0, 0, 0, 0.35);
+            border-color: rgba(122, 247, 215, 0.48);
+        }
+
+        .project:hover::after {
+            opacity: 1;
         }
 
         .cover {
             position: relative;
-            background: var(--border);
+            background: rgba(255, 255, 255, 0.08);
             aspect-ratio: 16 / 9;
             overflow: hidden;
         }
@@ -291,20 +472,21 @@
         }
 
         .links a, .links span {
-            color: #2563eb;
+            color: #8fd5ff;
             font-weight: 600;
         }
 
-        /* Generic listed sections */
         section.block {
             margin-top: 32px;
-            padding-top: 12px;
-            border-top: 1px solid var(--border);
         }
 
-        section.block h2 {
+        #projects h2,
+        section.block h2,
+        #about h2 {
+            font-family: "Space Grotesk", sans-serif;
             font-size: clamp(18px, 3vw, 24px);
             margin: 0 0 10px;
+            letter-spacing: 0.02em;
         }
 
         .list {
@@ -324,7 +506,14 @@
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 12px;
-            box-shadow: var(--shadow);
+            box-shadow: 0 10px 22px rgba(0, 0, 0, 0.18);
+            transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+        }
+
+        .item:hover {
+            transform: translateY(-3px);
+            border-color: rgba(122, 247, 215, 0.44);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.25);
         }
 
         .item h3 {
@@ -348,17 +537,101 @@
             margin: 2px 0;
         }
 
-        /* Footer */
+        #about {
+            margin-top: 32px;
+        }
+
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(22px) scale(.985);
+            transition: opacity .55s ease, transform .55s ease;
+        }
+
+        [data-reveal].revealed {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
         #site-footer {
             text-align: center;
             margin: 32px 0 24px;
-            color: #666;
+            color: #a8bddf;
             font-size: 0.95rem;
+            padding: 0 16px;
         }
 
         #site-footer a {
             color: inherit;
             text-decoration: underline;
+        }
+
+        #back-to-top {
+            position: fixed;
+            right: 18px;
+            bottom: 18px;
+            z-index: 45;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(122, 247, 215, 0.46);
+            border-radius: 50%;
+            background: rgba(6, 18, 35, 0.82);
+            color: #dff7ff;
+            font-size: 21px;
+            line-height: 1;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(12px);
+            pointer-events: none;
+            transition: all .22s ease;
+        }
+
+        #back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        #back-to-top:hover, #back-to-top:focus-visible {
+            background: rgba(14, 32, 57, 0.95);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 760px) {
+            #hero {
+                padding-top: 88px;
+            }
+
+            #quick-nav {
+                border-radius: 20px;
+                top: 8px;
+                padding: 8px;
+            }
+
+            #quick-nav a {
+                font-size: 0.86rem;
+                padding: 5px 12px;
+            }
+
+            #main {
+                margin-top: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .orb,
+            [data-reveal],
+            .project,
+            .item,
+            .btn,
+            #back-to-top {
+                transition: none !important;
+                animation: none !important;
+                transform: none !important;
+            }
         }
     </style>
 
@@ -368,7 +641,7 @@
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "Jiashuo Chang",
-            "url": "https://example.com/",
+            "url": "https://sjhpcjs.github.io/",
             "sameAs": [
                 "https://github.com/SJHPCJS"
             ],
@@ -379,13 +652,9 @@
                     "url": "https://github.com/SJHPCJS/MMP-2k"
                 },
                 {
-                    "@type": "ScholarlyArticle",
-                    "name": "When Composition Doesn't Add Up: Humans Identifying Defects in AI-Generated Images"
-                },
-                {
                     "@type": "CreativeWork",
                     "name": "PSYNAV — HCI Study",
-                    "url": "#"
+                    "url": "https://ace.ewapub.com/article/view/32664"
                 },
                 {
                     "@type": "CreativeWork",
@@ -402,6 +671,12 @@
     </script>
 </head>
 <body>
+<div id="scroll-progress" aria-hidden="true"></div>
+<div class="ambient-bg" aria-hidden="true">
+    <span class="orb orb-a"></span>
+    <span class="orb orb-b"></span>
+    <span class="orb orb-c"></span>
+</div>
 <!-- Hero -->
 <header id="hero" role="banner" aria-label="Site hero">
     <div id="lang-switch" role="group" aria-label="Language switch">
@@ -410,9 +685,10 @@
     </div>
     <div class="inner">
         <h1 id="site-name">Jiashuo Chang</h1>
-        <!-- tagline intentionally removed per request -->
+        <p id="hero-kicker" data-i18n="hero_kicker">Creative Developer · AI + HCI</p>
+        <p id="hero-subtitle"><span data-i18n="hero_line_prefix">Building</span> <span id="hero-typing"></span></p>
         <div class="cta" role="group" aria-label="Primary actions">
-            <a id="cv-link" class="btn" href="CV_Chang_Jiashuo_2026_EN.pdf" target="_blank" rel="noreferrer noopener"
+            <a id="cv-link" class="btn" href="CV_Chang Jiashuo 4.29 v2.pdf" target="_blank" rel="noreferrer noopener"
                aria-label="Open CV" data-i18n="cta_cv">CV</a>
             <a class="btn invert"
                href="https://www.linkedin.com/in/%E5%98%89%E7%A1%95-%E5%B8%B8-8022aa276/?locale=en_US" target="_blank"
@@ -423,6 +699,14 @@
         </div>
     </div>
 </header>
+
+<nav id="quick-nav" aria-label="Quick navigation">
+    <a href="#projects" data-i18n="nav_projects">Projects</a>
+    <a href="#experience" data-i18n="nav_experience">Experience</a>
+    <a href="#awards" data-i18n="nav_awards">Awards</a>
+    <a href="#skills" data-i18n="nav_skills">Skills</a>
+    <a href="#about" data-i18n="nav_about">About</a>
+</nav>
 
 <!-- Main -->
 <main id="main" role="main">
@@ -448,21 +732,6 @@
                            rel="noreferrer noopener">Hugging Face</a>
                         <a href="https://www.bilibili.com/video/BV1ghbBzmEmD/?vd_source=6ee4d352b4d19f07d3bfdf72ab49d8d3#reply115025297610222"
                            target="_blank" rel="noreferrer noopener">Video</a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- CO-AID / IEEE MMSP 2026 -->
-            <article class="project" aria-labelledby="p-coaid-title">
-                <div class="cover"><img src="co-aid.png"
-                                        alt="When Composition Doesn't Add Up paper cover" loading="lazy"
-                                        onerror="imageError(this)"/></div>
-                <div class="content">
-                    <h3 id="p-coaid-title">When Composition Doesn't Add Up</h3>
-                    <p data-i18n="proj_coaid_desc">Second author. Human-centered study and CO-AID dataset for
-                        identifying defects in AI-generated images. Accepted by IEEE MMSP 2026.</p>
-                    <div class="links">
-                        <span>To be released</span>
                     </div>
                 </div>
             </article>
@@ -539,18 +808,13 @@
         <h2 data-i18n="sec_education">Education</h2>
         <div class="list">
             <div class="item">
-                <h3 data-i18n="edu_ntu_title">Nanyang Technological University, Singapore — MSc Applied Artificial
-                    Intelligence</h3>
-                <p class="sub" data-i18n="edu_ntu_meta">08/2026–Present</p>
-            </div>
-            <div class="item">
                 <h3 data-i18n="edu_csu_title">Central South University — BSc Computer Science and Technology
                     (DIICSU)</h3>
-                <p class="sub" data-i18n="edu_csu_meta">09/2022–07/2026 · Completed · Final Grade 90.95/100</p>
+                <p class="sub" data-i18n="edu_csu_meta">09/2022–07/2026 · GPA 90.23/100 · Rank 17/60</p>
             </div>
             <div class="item">
                 <h3 data-i18n="edu_uod_title">University of Dundee — BSc Computing Science</h3>
-                <p class="sub" data-i18n="edu_uod_meta">09/2022–07/2026 · Completed · First Class Honours</p>
+                <p class="sub" data-i18n="edu_uod_meta">09/2022–07/2026</p>
             </div>
         </div>
     </section>
@@ -629,18 +893,19 @@
     </section>
 
     <!-- About -->
-    <section id="about" aria-label="About">
+    <section id="about" class="block" aria-label="About">
         <h2 data-i18n="sec_about">About</h2>
         <p>
             <span data-i18n="about_text">Undergraduate focusing on Image Quality Assessment (IQA) and Human–Computer Interaction (HCI). Interested in building practical datasets, models, and tools.</span>
-            <span> <span data-i18n="contact">Contact</span>: <a id="email-link" href="mailto:JIASHUO005@e.ntu.edu.sg">JIASHUO005@e.ntu.edu.sg</a></span>
+            <span> <span data-i18n="contact">Contact</span>: <a id="email-link" href="mailto:2542762@dundee.ac.uk">2542762@dundee.ac.uk</a></span>
         </p>
     </section>
 </main>
 
 <!-- Footer -->
-<footer id="site-footer" role="contentinfo">© 2025 Jiashuo Chang · <a href="mailto:JIASHUO005@e.ntu.edu.sg">JIASHUO005@e.ntu.edu.sg</a>
+<footer id="site-footer" role="contentinfo">© 2025 Jiashuo Chang · <a href="mailto:2542762@dundee.ac.uk">2542762@dundee.ac.uk</a>
     <a href="mailto:2224816355@qq.com">2224816355@qq.com</a></footer>
+<button id="back-to-top" type="button" aria-label="Back to top">↑</button>
 
 <script>
     function imageError(img) {
@@ -658,102 +923,153 @@
         }
     }
 
-    // i18n
     const I18N = {
-            en: {
-                cta_cv: 'CV',
-                cta_github: 'GitHub',
-                cta_projects: 'Projects',
-                sec_projects: 'Highlight Projects',
-                sec_education: 'Education',
-                sec_experience: 'Experience',
-                sec_awards: 'Awards',
-                sec_skills: 'Skills',
-                sec_about: 'About',
-                proj_mmp2k_desc: 'Co-first author. Macro-photo IQA dataset and web platform (Vue + Flask). Accepted at ICIP 2025.',
-                proj_coaid_desc: 'Second author. Human-centered study and CO-AID dataset for identifying defects in AI-generated images. Accepted by IEEE MMSP 2026.',
-                proj_psynav_desc: 'First author. User-needs study and system design for AI psychological assistants. Accepted at AICSIP 2025.',
-                proj_room_desc: 'Full-stack campus room scheduling prototype with conflict resolution.',
-                proj_parli_desc: 'Italian word-learning website. Lightweight UI and spaced-repetition practice.',
-                proj_tdg_desc: 'Course project: tower defense game design and implementation.',
-                edu_ntu_title: 'Nanyang Technological University, Singapore — MSc Applied Artificial Intelligence',
-                edu_ntu_meta: '08/2026–Present',
-                edu_csu_title: 'Central South University — BSc Computer Science and Technology (DIICSU)',
-                edu_csu_meta: '09/2022–07/2026 · Completed · Final Grade 90.95/100',
-                edu_uod_title: 'University of Dundee — BSc Computing Science',
-                edu_uod_meta: '09/2022–07/2026 · Completed · First Class Honours',
-                exp_east_title: 'Backend Intern — EAST Energy Storage Technology Co., Ltd. (Xi’an R&D Center)',
-                exp_east_time: '07/2024–09/2024 · Photovoltaic & Energy Storage Products Dept.',
-                exp_east_b1: 'Built voice and face recognition login via Baidu AI Cloud API.',
-                exp_east_b2: 'Implemented backend with Python (Flask) and improved performance.',
-                exp_east_b3: 'Enhanced data processing and system stability.',
-                exp_wsc_title: 'IT Intern — Western Securities Co., Ltd.',
-                exp_wsc_time: '07/2025–08/2025 · Information Technology Department',
-                exp_wsc_b1: 'Learned securities business workflows, combining with computer science background to engage in AI agent practice.',
-                exp_wsc_b2: 'Built Agent prototypes on the dify platform for multi-source data integration and Multi-Agent fault analysis.',
-                exp_wsc_b3: 'Joined AI competition discussions, demonstrating system modeling and logical analysis skills.',
-                aw1: 'Third-Class Scholarship, Central South University (2023–2024)',
-                aw2: '3rd Prize — China Collegiate Service Outsourcing Competition (Central China)',
-                aw3: '3rd Prize — “Jisi Cup” Research-Oriented Learning Competition',
-                aw4: 'Third-Class Scholarship, Central South University (2022–2023)',
-                aw5: 'Excellent Student Leader, Central South University (2022–2023)',
-                skill_prog_h: 'Programming',
-                skill_prog: 'Java, C, C++, Python, HTML, CSS, JavaScript, Bash, Flask, Vue, ElementUI',
-                skill_lang_h: 'Languages',
-                skill_lang: 'IELTS 7.0 (L 8.5 / R 7.5 / W 6.0 / S 6.5); CET-4 589; CET-6 515',
-                skill_interest_h: 'Interests',
-                skill_interest: 'Reading, Football, Photography, Fine Arts',
-                about_text: 'MSc Applied Artificial Intelligence student at Nanyang Technological University, Singapore, focusing on Image Quality Assessment (IQA), AI-generated image quality, and Human–Computer Interaction (HCI).',
-                contact: 'Contact'
-            },
-            zh: {
-                cta_cv: '简历',
-                cta_github: 'GitHub',
-                cta_projects: '项目',
-                sec_projects: '精选项目',
-                sec_education: '教育经历',
-                sec_experience: '实习与经历',
-                sec_awards: '荣誉与奖项',
-                sec_skills: '技能与语言',
-                sec_about: '关于',
-                proj_mmp2k_desc: '共同一作。微距摄影图像质量（IQA）数据集与平台（Vue + Flask）。ICIP 2025 接收。',
-                proj_coaid_desc: '第二作者。面向 AI 生成图像缺陷识别的人因研究与 CO-AID 数据集。IEEE MMSP 2026 接收。',
-                proj_psynav_desc: '第一作者。面向 AI 心理助理的用户研究与系统设计。AICSIP 2025 接收。',
-                proj_room_desc: '校园教室预约的全栈原型，包含冲突处理。',
-                proj_parli_desc: '意大利语单词学习网站，轻量界面 + 间隔复习。',
-                proj_tdg_desc: '课程项目：塔防游戏设计与实现，基础玩法完整，作为游戏编程课程实践。',
-                edu_ntu_title: '新加坡南洋理工大学 — 应用人工智能硕士',
-                edu_ntu_meta: '2026/08–至今',
-                edu_csu_title: '中南大学（邓迪国际学院）— 计算机科学与技术 本科',
-                edu_csu_meta: '2022/09–2026/07 · 已完成 · 最终成绩 90.95/100',
-                edu_uod_title: '邓迪大学 — 计算机科学 本科',
-                edu_uod_meta: '2022/09–2026/07 · 已完成 · 荣誉一等学位',
-                exp_east_title: '后端实习生 — 易事特储能科技有限公司（西安研发中心）',
-                exp_east_time: '2024/07–2024/09 · 光储产品部',
-                exp_east_b1: '基于百度智能云实现语音与人脸识别登录。',
-                exp_east_b2: '使用 Python（Flask）完成后端并进行性能优化。',
-                exp_east_b3: '参与数据处理与系统稳定性提升。',
-                exp_wsc_title: '信息技术部实习生 — 西部证券股份有限公司',
-                exp_wsc_time: '2025/07–2025/08 · 信息技术部',
-                exp_wsc_b1: '学习证券业务流程，结合计算机背景参与 AI 智能体实践。',
-                exp_wsc_b2: '基于 dify 平台开发 Agent 原型，实现多数据源集成Multi-Agent 故障分析。',
-                exp_wsc_b3: '参与 AI 大赛项目讨论，展现系统建模与逻辑分析能力。',
-                aw1: '中南大学 2023–2024 学年三等奖学金',
-                aw2: '中国大学生服务外包创新创业大赛（中部赛区）三等奖',
-                aw3: '“集思杯”大学生研究导向型学习成果大赛 三等奖',
-                aw4: '中南大学 2022–2023 学年三等奖学金',
-                aw5: '中南大学 2022–2023 学年优秀学生干部',
-                skill_prog_h: '编程',
-                skill_prog: 'Java、C、C++、Python、HTML、CSS、JavaScript、Bash、Flask、Vue、ElementUI',
-                skill_lang_h: '语言',
-                skill_lang: '雅思 7.0（听 8.5 / 读 7.5 / 写 6.0 / 说 6.5）；四级 589；六级 515',
-                skill_interest_h: '兴趣',
-                skill_interest: '阅读、足球、摄影、美术',
-                about_text: '现就读于新加坡南洋理工大学应用人工智能硕士项目，关注图像质量评价（IQA）、AI 生成图像质量与人机交互（HCI）。',
-                contact: '联系'
-            }
+        en: {
+            cta_cv: 'CV',
+            cta_github: 'GitHub',
+            cta_projects: 'Projects',
+            hero_kicker: 'Creative Developer · AI + HCI',
+            hero_line_prefix: 'Building',
+            nav_projects: 'Projects',
+            nav_experience: 'Experience',
+            nav_awards: 'Awards',
+            nav_skills: 'Skills',
+            nav_about: 'About',
+            sec_projects: 'Highlight Projects',
+            sec_education: 'Education',
+            sec_experience: 'Experience',
+            sec_awards: 'Awards',
+            sec_skills: 'Skills',
+            sec_about: 'About',
+            proj_mmp2k_desc: 'Co-first author. Macro-photo IQA dataset and web platform (Vue + Flask). Accepted at ICIP 2025.',
+            proj_psynav_desc: 'First author. User-needs study and system design for AI psychological assistants. Accepted at AICSIP 2025.',
+            proj_room_desc: 'Full-stack campus room scheduling prototype with conflict resolution.',
+            proj_parli_desc: 'Italian word-learning website. Lightweight UI and spaced-repetition practice.',
+            proj_tdg_desc: 'Course project: tower defense game design and implementation.',
+            edu_csu_title: 'Central South University — BSc Computer Science and Technology (DIICSU)',
+            edu_csu_meta: '09/2022–07/2026 · GPA 90.23/100 · Rank 17/60',
+            edu_uod_title: 'University of Dundee — BSc Computing Science',
+            edu_uod_meta: '09/2022–07/2026',
+            exp_east_title: 'Backend Intern — EAST Energy Storage Technology Co., Ltd. (Xi’an R&D Center)',
+            exp_east_time: '07/2024–09/2024 · Photovoltaic & Energy Storage Products Dept.',
+            exp_east_b1: 'Built voice and face recognition login via Baidu AI Cloud API.',
+            exp_east_b2: 'Implemented backend with Python (Flask) and improved performance.',
+            exp_east_b3: 'Enhanced data processing and system stability.',
+            exp_wsc_title: 'IT Intern — Western Securities Co., Ltd.',
+            exp_wsc_time: '07/2025–08/2025 · Information Technology Department',
+            exp_wsc_b1: 'Learned securities business workflows, combining with computer science background to engage in AI agent practice.',
+            exp_wsc_b2: 'Built Agent prototypes on the dify platform for multi-source data integration and Multi-Agent fault analysis.',
+            exp_wsc_b3: 'Joined AI competition discussions, demonstrating system modeling and logical analysis skills.',
+            aw1: 'Third-Class Scholarship, Central South University (2023–2024)',
+            aw2: '3rd Prize — China Collegiate Service Outsourcing Competition (Central China)',
+            aw3: '3rd Prize — “Jisi Cup” Research-Oriented Learning Competition',
+            aw4: 'Third-Class Scholarship, Central South University (2022–2023)',
+            aw5: 'Excellent Student Leader, Central South University (2022–2023)',
+            skill_prog_h: 'Programming',
+            skill_prog: 'Java, C, C++, Python, HTML, CSS, JavaScript, Bash, Flask, Vue, ElementUI',
+            skill_lang_h: 'Languages',
+            skill_lang: 'IELTS 7.0 (L 8.5 / R 7.5 / W 6.0 / S 6.5); CET-4 589; CET-6 515',
+            skill_interest_h: 'Interests',
+            skill_interest: 'Reading, Football, Photography, Fine Arts',
+            about_text: 'Undergraduate focusing on Image Quality Assessment (IQA) and Human–Computer Interaction (HCI). Interested in building practical datasets, models, and tools.',
+            contact: 'Contact'
+        },
+        zh: {
+            cta_cv: '简历',
+            cta_github: 'GitHub',
+            cta_projects: '项目',
+            hero_kicker: '创意开发者 · AI + HCI',
+            hero_line_prefix: '正在打造',
+            nav_projects: '项目',
+            nav_experience: '经历',
+            nav_awards: '奖项',
+            nav_skills: '技能',
+            nav_about: '关于',
+            sec_projects: '精选项目',
+            sec_education: '教育经历',
+            sec_experience: '实习与经历',
+            sec_awards: '荣誉与奖项',
+            sec_skills: '技能与语言',
+            sec_about: '关于',
+            proj_mmp2k_desc: '共同一作。微距摄影图像质量（IQA）数据集与平台（Vue + Flask）。ICIP 2025 接收。',
+            proj_psynav_desc: '第一作者。面向 AI 心理助理的用户研究与系统设计。AICSIP 2025 接收。',
+            proj_room_desc: '校园教室预约的全栈原型，包含冲突处理。',
+            proj_parli_desc: '意大利语单词学习网站，轻量界面 + 间隔复习。',
+            proj_tdg_desc: '课程项目：塔防游戏设计与实现，基础玩法完整，作为游戏编程课程实践。',
+            edu_csu_title: '中南大学（邓迪国际学院）— 计算机科学与技术 本科',
+            edu_csu_meta: '2022/09–2026/07 · GPA 90.23/100 · 专业排名 17/60',
+            edu_uod_title: '邓迪大学 — 计算机科学 本科',
+            edu_uod_meta: '2022/09–2026/07',
+            exp_east_title: '后端实习生 — 易事特储能科技有限公司（西安研发中心）',
+            exp_east_time: '2024/07–2024/09 · 光储产品部',
+            exp_east_b1: '基于百度智能云实现语音与人脸识别登录。',
+            exp_east_b2: '使用 Python（Flask）完成后端并进行性能优化。',
+            exp_east_b3: '参与数据处理与系统稳定性提升。',
+            exp_wsc_title: '信息技术部实习生 — 西部证券股份有限公司',
+            exp_wsc_time: '2025/07–2025/08 · 信息技术部',
+            exp_wsc_b1: '学习证券业务流程，结合计算机背景参与 AI 智能体实践。',
+            exp_wsc_b2: '基于 dify 平台开发 Agent 原型，实现多数据源集成Multi-Agent 故障分析。',
+            exp_wsc_b3: '参与 AI 大赛项目讨论，展现系统建模与逻辑分析能力。',
+            aw1: '中南大学 2023–2024 学年三等奖学金',
+            aw2: '中国大学生服务外包创新创业大赛（中部赛区）三等奖',
+            aw3: '“集思杯”大学生研究导向型学习成果大赛 三等奖',
+            aw4: '中南大学 2022–2023 学年三等奖学金',
+            aw5: '中南大学 2022–2023 学年优秀学生干部',
+            skill_prog_h: '编程',
+            skill_prog: 'Java、C、C++、Python、HTML、CSS、JavaScript、Bash、Flask、Vue、ElementUI',
+            skill_lang_h: '语言',
+            skill_lang: '雅思 7.0（听 8.5 / 读 7.5 / 写 6.0 / 说 6.5）；四级 589；六级 515',
+            skill_interest_h: '兴趣',
+            skill_interest: '阅读、足球、摄影、美术',
+            about_text: '本科生，关注图像质量评价（IQA）与人机交互（HCI），乐于做实用的数据集、模型与工具。',
+            contact: '联系'
         }
-    ;
+    };
+
+    const HERO_WORDS = {
+        en: ['IQA datasets', 'HCI prototypes', 'practical AI tools'],
+        zh: ['图像质量评估数据集', '人机交互原型', '实用AI工具']
+    };
+
+    let typingTimer = null;
+
+    function startHeroTyping(lang) {
+        const target = document.getElementById('hero-typing');
+        if (!target) return;
+        const words = HERO_WORDS[lang] || HERO_WORDS.en;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (typingTimer) clearTimeout(typingTimer);
+        if (reduceMotion) {
+            target.textContent = words[0] || '';
+            return;
+        }
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const tick = () => {
+            const word = words[wordIndex % words.length] || '';
+            if (!deleting) {
+                charIndex = Math.min(word.length, charIndex + 1);
+                target.textContent = word.slice(0, charIndex);
+                if (charIndex === word.length) {
+                    deleting = true;
+                    typingTimer = setTimeout(tick, 1100);
+                    return;
+                }
+            } else {
+                charIndex = Math.max(0, charIndex - 1);
+                target.textContent = word.slice(0, charIndex);
+                if (charIndex === 0) {
+                    deleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+            }
+            typingTimer = setTimeout(tick, deleting ? 48 : 80);
+        };
+        tick();
+    }
 
     function applyLang(lang) {
         const dict = I18N[lang] || I18N.en;
@@ -763,7 +1079,7 @@
         });
         const cv = document.getElementById('cv-link');
         if (cv) {
-            cv.href = lang === 'zh' ? '常嘉硕_简历_2026_CN.pdf' : 'CV_Chang_Jiashuo_2026_EN.pdf';
+            cv.href = lang === 'zh' ? '常嘉硕 202505.pdf' : 'CV_Chang Jiashuo 4.29 v2.pdf';
             cv.setAttribute('aria-label', lang === 'zh' ? '打开简历' : 'Open CV');
         }
         const enBtn = document.getElementById('btn-en');
@@ -774,6 +1090,8 @@
         }
         const nameEl = document.getElementById('site-name');
         if (nameEl) nameEl.textContent = lang === 'zh' ? '常嘉硕' : 'Jiashuo Chang';
+        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+        startHeroTyping(lang);
         try {
             localStorage.setItem('site_lang', lang);
         } catch (_) {
@@ -796,10 +1114,118 @@
         if (zhBtn) zhBtn.addEventListener('click', () => applyLang('zh'));
     }
 
+    function initReveal() {
+        const targets = document.querySelectorAll('.project, .item, #projects, section.block, #about');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        targets.forEach(el => el.setAttribute('data-reveal', ''));
+        if (reduceMotion || !('IntersectionObserver' in window)) {
+            targets.forEach(el => el.classList.add('revealed'));
+            return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {threshold: 0.14, rootMargin: '0px 0px -40px 0px'});
+        targets.forEach(el => observer.observe(el));
+    }
+
+    function initScrollProgress() {
+        const bar = document.getElementById('scroll-progress');
+        if (!bar) return;
+        const update = () => {
+            const root = document.documentElement;
+            const max = root.scrollHeight - root.clientHeight;
+            const progress = max > 0 ? window.scrollY / max : 0;
+            bar.style.transform = `scaleX(${Math.max(0, Math.min(progress, 1))})`;
+        };
+        window.addEventListener('scroll', update, {passive: true});
+        update();
+    }
+
+    function initProjectTilt() {
+        const cards = document.querySelectorAll('.project');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (reduceMotion) return;
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (event) => {
+                const rect = card.getBoundingClientRect();
+                const x = event.clientX - rect.left;
+                const y = event.clientY - rect.top;
+                const rx = ((y / rect.height) - 0.5) * -8;
+                const ry = ((x / rect.width) - 0.5) * 10;
+                card.style.setProperty('--mx', `${x}px`);
+                card.style.setProperty('--my', `${y}px`);
+                card.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.removeProperty('--mx');
+                card.style.removeProperty('--my');
+            });
+        });
+    }
+
+    function initBackToTop() {
+        const btn = document.getElementById('back-to-top');
+        if (!btn) return;
+        const onScroll = () => {
+            btn.classList.toggle('show', window.scrollY > 520);
+        };
+        btn.addEventListener('click', () => {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+        window.addEventListener('scroll', onScroll, {passive: true});
+        onScroll();
+    }
+
+    function initQuickNav() {
+        const links = Array.from(document.querySelectorAll('#quick-nav a'));
+        if (!links.length) return;
+        const getTarget = (link) => document.querySelector(link.getAttribute('href'));
+        const sections = links.map(getTarget).filter(Boolean);
+        const setActive = (id) => {
+            links.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+        };
+
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) setActive(entry.target.id);
+                });
+            }, {threshold: 0.45});
+            sections.forEach(section => observer.observe(section));
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                const id = (link.getAttribute('href') || '').replace('#', '');
+                if (id) setActive(id);
+            });
+        });
+    }
+
+    function initFancyUi() {
+        initReveal();
+        initScrollProgress();
+        initProjectTilt();
+        initBackToTop();
+        initQuickNav();
+    }
+
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initI18n, {once: true});
+        document.addEventListener('DOMContentLoaded', () => {
+            initI18n();
+            initFancyUi();
+        }, {once: true});
     } else {
         initI18n();
+        initFancyUi();
     }
 </script>
 </body>
