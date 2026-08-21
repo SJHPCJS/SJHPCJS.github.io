@@ -643,9 +643,15 @@
             "name": "Jiashuo Chang",
             "url": "https://sjhpcjs.github.io/",
             "sameAs": [
-                "https://github.com/SJHPCJS"
+                "https://github.com/SJHPCJS",
+                "https://scholar.google.com/citations?user=r0VXh14AAAAJ&hl=en"
             ],
             "hasPart": [
+                {
+                    "@type": "ScholarlyArticle",
+                    "name": "When Composition Doesn't Add Up: Humans Identifying Defects in AI-Generated Images",
+                    "url": "https://github.com/Future-IQA/CO-AID"
+                },
                 {
                     "@type": "CreativeWork",
                     "name": "MMP-2K — Macro Photography IQA",
@@ -688,8 +694,10 @@
         <p id="hero-kicker" data-i18n="hero_kicker">Creative Developer · AI + HCI</p>
         <p id="hero-subtitle"><span data-i18n="hero_line_prefix">Building</span> <span id="hero-typing"></span></p>
         <div class="cta" role="group" aria-label="Primary actions">
-            <a id="cv-link" class="btn" href="CV_Chang Jiashuo 4.29 v2.pdf" target="_blank" rel="noreferrer noopener"
+            <a id="cv-link" class="btn" href="CV_Chang_Jiashuo_2026_EN.pdf" target="_blank" rel="noreferrer noopener"
                aria-label="Open CV" data-i18n="cta_cv">CV</a>
+            <a class="btn invert" href="https://scholar.google.com/citations?user=r0VXh14AAAAJ&hl=en" target="_blank"
+               rel="noreferrer noopener" aria-label="Visit Google Scholar profile">Google Scholar</a>
             <a class="btn invert"
                href="https://www.linkedin.com/in/%E5%98%89%E7%A1%95-%E5%B8%B8-8022aa276/?locale=en_US" target="_blank"
                rel="noreferrer noopener" aria-label="">LinkedIn</a>
@@ -732,6 +740,21 @@
                            rel="noreferrer noopener">Hugging Face</a>
                         <a href="https://www.bilibili.com/video/BV1ghbBzmEmD/?vd_source=6ee4d352b4d19f07d3bfdf72ab49d8d3#reply115025297610222"
                            target="_blank" rel="noreferrer noopener">Video</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CO-AID / IEEE MMSP 2026 -->
+            <article class="project" aria-labelledby="p-coaid-title">
+                <div class="cover"><img src="co-aid.png" alt="When Composition Doesn't Add Up paper cover" loading="lazy"
+                                        onerror="imageError(this)"/></div>
+                <div class="content">
+                    <h3 id="p-coaid-title">When Composition Doesn't Add Up</h3>
+                    <p data-i18n="proj_coaid_desc">Second author. Human-centered study and CO-AID dataset for
+                        identifying defects in AI-generated images. Accepted by IEEE MMSP 2026.</p>
+                    <div class="links">
+                        <a href="https://github.com/Future-IQA/CO-AID" target="_blank"
+                           rel="noreferrer noopener">GitHub</a>
                     </div>
                 </div>
             </article>
@@ -897,13 +920,13 @@
         <h2 data-i18n="sec_about">About</h2>
         <p>
             <span data-i18n="about_text">Undergraduate focusing on Image Quality Assessment (IQA) and Human–Computer Interaction (HCI). Interested in building practical datasets, models, and tools.</span>
-            <span> <span data-i18n="contact">Contact</span>: <a id="email-link" href="mailto:2542762@dundee.ac.uk">2542762@dundee.ac.uk</a></span>
+            <span> <span data-i18n="contact">Contact</span>: <a id="email-link" href="mailto:JIASHUO005@e.ntu.edu.sg">JIASHUO005@e.ntu.edu.sg</a></span>
         </p>
     </section>
 </main>
 
 <!-- Footer -->
-<footer id="site-footer" role="contentinfo">© 2025 Jiashuo Chang · <a href="mailto:2542762@dundee.ac.uk">2542762@dundee.ac.uk</a>
+<footer id="site-footer" role="contentinfo">© 2026 Jiashuo Chang · <a href="mailto:JIASHUO005@e.ntu.edu.sg">JIASHUO005@e.ntu.edu.sg</a>
     <a href="mailto:2224816355@qq.com">2224816355@qq.com</a></footer>
 <button id="back-to-top" type="button" aria-label="Back to top">↑</button>
 
@@ -928,6 +951,7 @@
             cta_cv: 'CV',
             cta_github: 'GitHub',
             cta_projects: 'Projects',
+            proj_coaid_desc: 'Second author. Human-centered study and CO-AID dataset for identifying defects in AI-generated images. Accepted by IEEE MMSP 2026.',
             hero_kicker: 'Creative Developer · AI + HCI',
             hero_line_prefix: 'Building',
             nav_projects: 'Projects',
@@ -978,6 +1002,7 @@
             cta_cv: '简历',
             cta_github: 'GitHub',
             cta_projects: '项目',
+            proj_coaid_desc: '第二作者。面向 AI 生成图像缺陷识别的人因研究与 CO-AID 数据集。IEEE MMSP 2026 接收。',
             hero_kicker: '创意开发者 · AI + HCI',
             hero_line_prefix: '正在打造',
             nav_projects: '项目',
@@ -1079,7 +1104,7 @@
         });
         const cv = document.getElementById('cv-link');
         if (cv) {
-            cv.href = lang === 'zh' ? '常嘉硕 202505.pdf' : 'CV_Chang Jiashuo 4.29 v2.pdf';
+            cv.href = lang === 'zh' ? '常嘉硕_简历_2026_CN.pdf' : 'CV_Chang_Jiashuo_2026_EN.pdf';
             cv.setAttribute('aria-label', lang === 'zh' ? '打开简历' : 'Open CV');
         }
         const enBtn = document.getElementById('btn-en');
