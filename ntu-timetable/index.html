@@ -686,7 +686,7 @@
   </main>
 
   <footer class="footer">
-    来源：AY26 T1 Timetable (20260728).pdf + CA6000 老师课程安排截图 + CA6002 Delivery Schedule + Mid-week Class Swap announcement。公开页面不包含 Teams 会议链接或会议凭证。
+    来源：AY26 T1 Timetable (20260728).pdf + CA6000、CA6001 老师课程通知 + CA6002 Delivery Schedule + Mid-week Class Swap announcement。公开页面不包含 Teams 会议链接或会议凭证。
   </footer>
 
   <script>
@@ -809,12 +809,17 @@
         code: "CA6001",
         week,
         day: "thu",
-        start: "17:00",
-        end: "19:00",
+        start: week === 8 ? "16:30" : "17:00",
+        end: week === 8 ? "18:30" : "19:00",
         title: "课堂",
-        location: week === 12 ? "LT2A" : "LT22"
+        location: week === 8 ? "LT20" : week === 12 ? "LT2A" : "LT22"
       });
-      addEvent({ code: "CA6001", week, day: "sat", start: "13:30", end: "17:00", title: "课堂", location: "LT7" });
+      if (week === 10 || week === 12) {
+        addEvent({ code: "CA6001", week, day: "sat", start: "13:30", end: "14:30", title: week === 10 ? "Quiz #1（必修）" : "Quiz #2（必修）", location: "待老师确认", kind: "quiz" });
+        addEvent({ code: "CA6001", week, day: "sat", start: "14:30", end: "17:00", title: "课堂", location: "LT7" });
+      } else {
+        addEvent({ code: "CA6001", week, day: "sat", start: "13:30", end: "17:00", title: "课堂", location: "LT7" });
+      }
 
       addEvent({
         code: "CA6003",
@@ -1100,6 +1105,12 @@
       }
       if (event.title === "Quiz #2 + Presentation") {
         return "Quiz #2 and selected assignment presentation";
+      }
+      if (event.title === "Quiz #1（必修）") {
+        return "Quiz #1 (compulsory)";
+      }
+      if (event.title === "Quiz #2（必修）") {
+        return "Quiz #2 (compulsory)";
       }
       if (event.title === "Teams 线上课") {
         return "Teams online class";
