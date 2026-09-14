@@ -686,7 +686,7 @@
   </main>
 
   <footer class="footer">
-    来源：AY26 T1 Timetable (20260728).pdf + CA6000、CA6001 老师课程通知 + CA6002 Delivery Schedule + Mid-week Class Swap announcement。公开页面不包含 Teams 会议链接或会议凭证。
+    来源：AY26 T1 Timetable (20260728).pdf + CA6000、CA6001 老师课程通知 + CA6002 Delivery Schedule + CA6003 Schedule + Mid-week Class Swap announcement。公开页面不包含 Teams 会议链接或会议凭证。
   </footer>
 
   <script>
@@ -830,13 +830,25 @@
         title: "课堂",
         location: week === 9 ? "LT28" : "LT29"
       });
-      addEvent({ code: "CA6003", week, day: "sat", start: "09:00", end: "12:30", title: "课堂", location: "LT7" });
+      addEvent({
+        code: "CA6003",
+        week,
+        day: "sat",
+        start: "09:00",
+        end: "12:30",
+        title: week === 10 ? "Quiz #1" : week === 12 ? "Quiz #2" : "课堂",
+        location: week === 10 || week === 12 ? "T.B.D." : "LT7",
+        kind: week === 10 || week === 12 ? "quiz" : undefined
+      });
     });
 
     addWeeklyOnlineVideo([1, 2, 3, 4, 5, 6], "CA6000");
     addWeeklyOnlineVideo([1, 2, 3, 4, 5, 6], "CA6002");
     addWeeklyOnlineVideo([7, 8, 9, 10, 11, 12], "CA6001");
     addWeeklyOnlineVideo([7, 8, 9, 10, 11, 12], "CA6003");
+
+    addEvent({ code: "CA6003", week: 11, day: "sun", start: "12:00", end: "12:15", title: "Assignment submission 截止", location: "Online submission", kind: "deadline" });
+    addEvent({ code: "CA6003", week: 12, day: "wed", start: "12:00", end: "12:15", title: "Peer review 截止", location: "Online submission", kind: "deadline" });
 
     let currentWeek = getInitialWeek();
 
