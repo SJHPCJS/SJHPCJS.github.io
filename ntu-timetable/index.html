@@ -686,7 +686,7 @@
   </main>
 
   <footer class="footer">
-    来源：AY26 T1 Timetable (20260728).pdf + CA6000、CA6001 老师课程通知 + CA6002 Delivery Schedule + CA6003 Schedule + Mid-week Class Swap announcement。公开页面不包含 Teams 会议链接或会议凭证。
+    来源：AY26 T1 Timetable (20260728).pdf + CA6000、CA6001 老师课程通知 + CA6002 Delivery Schedule + CA6003 Schedule 与 10 月 13/17 日课程通知。公开页面不包含 Teams 会议链接或会议凭证。
   </footer>
 
   <script>
@@ -817,25 +817,31 @@
       if (week === 10 || week === 12) {
         addEvent({ code: "CA6001", week, day: "sat", start: "13:30", end: "14:30", title: week === 10 ? "Quiz #1（必修）" : "Quiz #2（必修）", location: "待老师确认", kind: "quiz" });
         addEvent({ code: "CA6001", week, day: "sat", start: "14:30", end: "17:00", title: "课堂", location: "LT7" });
+      } else if (week === 11) {
+        addEvent({ code: "CA6001", week, day: "sat", start: "09:00", end: "12:30", title: "Online only 线上课", location: "Online only", kind: "online" });
       } else {
         addEvent({ code: "CA6001", week, day: "sat", start: "13:30", end: "17:00", title: "课堂", location: "LT7" });
       }
 
-      addEvent({
-        code: "CA6003",
-        week,
-        day: "tue",
-        start: "19:30",
-        end: "21:30",
-        title: "课堂",
-        location: week === 9 ? "LT28" : "LT29"
-      });
+      if (week === 11) {
+        addEvent({ code: "CA6003", week, day: "tue", floating: true, kind: "video", title: "录播课", location: "Recorded lecture folder", note: "无直播课" });
+      } else {
+        addEvent({
+          code: "CA6003",
+          week,
+          day: "tue",
+          start: "19:30",
+          end: "21:30",
+          title: "课堂",
+          location: week === 9 ? "LT28" : "LT29"
+        });
+      }
       addEvent({
         code: "CA6003",
         week,
         day: "sat",
-        start: "09:00",
-        end: "12:30",
+        start: week === 11 ? "13:30" : "09:00",
+        end: week === 11 ? "17:00" : "12:30",
         title: week === 10 ? "Quiz #1" : week === 12 ? "Quiz #2" : "课堂",
         location: week === 10 || week === 12 ? "T.B.D." : "LT7",
         kind: week === 10 || week === 12 ? "quiz" : undefined
@@ -1136,6 +1142,9 @@
       if (event.title === "线上视频 1 小时") {
         return "Online video (1 hour)";
       }
+      if (event.title === "录播课") {
+        return "Recorded lecture (no live class)";
+      }
       if (event.title === "作业截止") {
         return "Assignment deadline";
       }
@@ -1167,6 +1176,9 @@
     function exportNote(note) {
       if (note === "无固定时间") {
         return "No fixed time";
+      }
+      if (note === "无直播课") {
+        return "No live class";
       }
       return note;
     }
