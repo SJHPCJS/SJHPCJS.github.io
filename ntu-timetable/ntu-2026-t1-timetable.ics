@@ -752,4 +752,526 @@ LOCATION:Online submission
 DTSTART;TZID=Asia/Singapore:20261021T120000
 DTEND;TZID=Asia/Singapore:20261021T121500
 END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w1-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 1\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT20
+DTSTART;TZID=Asia/Singapore:20261111T203000
+DTEND;TZID=Asia/Singapore:20261111T223000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w1-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 1\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT7
+DTSTART;TZID=Asia/Singapore:20261114T090000
+DTEND;TZID=Asia/Singapore:20261114T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w1-tue-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 1\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LT16
+DTSTART;TZID=Asia/Singapore:20261110T173000
+DTEND;TZID=Asia/Singapore:20261110T193000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w1-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 1\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LT8
+DTSTART;TZID=Asia/Singapore:20261114T133000
+DTEND;TZID=Asia/Singapore:20261114T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w2-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 2\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT2A
+DTSTART;TZID=Asia/Singapore:20261118T183000
+DTEND;TZID=Asia/Singapore:20261118T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w2-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 2\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT1A
+DTSTART;TZID=Asia/Singapore:20261121T090000
+DTEND;TZID=Asia/Singapore:20261121T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w2-tue-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 2\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LT1A
+DTSTART;TZID=Asia/Singapore:20261117T183000
+DTEND;TZID=Asia/Singapore:20261117T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w2-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 2\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LHN-LT
+DTSTART;TZID=Asia/Singapore:20261121T133000
+DTEND;TZID=Asia/Singapore:20261121T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w3-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 3\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT2A
+DTSTART;TZID=Asia/Singapore:20261125T183000
+DTEND;TZID=Asia/Singapore:20261125T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w3-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 3\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT1A
+DTSTART;TZID=Asia/Singapore:20261128T090000
+DTEND;TZID=Asia/Singapore:20261128T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w3-tue-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 3\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LT1A
+DTSTART;TZID=Asia/Singapore:20261124T183000
+DTEND;TZID=Asia/Singapore:20261124T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w3-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 3\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LHN-LT
+DTSTART;TZID=Asia/Singapore:20261128T133000
+DTEND;TZID=Asia/Singapore:20261128T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w4-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 4\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT2A
+DTSTART;TZID=Asia/Singapore:20261202T183000
+DTEND;TZID=Asia/Singapore:20261202T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w4-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 4\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT1A
+DTSTART;TZID=Asia/Singapore:20261205T090000
+DTEND;TZID=Asia/Singapore:20261205T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w4-tue-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 4\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LT1A
+DTSTART;TZID=Asia/Singapore:20261201T183000
+DTEND;TZID=Asia/Singapore:20261201T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w4-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 4\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LHN-LT
+DTSTART;TZID=Asia/Singapore:20261205T133000
+DTEND;TZID=Asia/Singapore:20261205T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w5-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 5\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT2A
+DTSTART;TZID=Asia/Singapore:20261209T183000
+DTEND;TZID=Asia/Singapore:20261209T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w5-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 5\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT3
+DTSTART;TZID=Asia/Singapore:20261212T090000
+DTEND;TZID=Asia/Singapore:20261212T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w5-tue-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Class
+DESCRIPTION:Week 5\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah
+LOCATION:LT1A
+DTSTART;TZID=Asia/Singapore:20261208T183000
+DTEND;TZID=Asia/Singapore:20261208T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w6-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 6\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT2A
+DTSTART;TZID=Asia/Singapore:20261216T183000
+DTEND;TZID=Asia/Singapore:20261216T203000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w6-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Class
+DESCRIPTION:Week 6\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)
+LOCATION:LT3
+DTSTART;TZID=Asia/Singapore:20261219T090000
+DTEND;TZID=Asia/Singapore:20261219T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w7-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 7\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT6
+DTSTART;TZID=Asia/Singapore:20270106T190000
+DTEND;TZID=Asia/Singapore:20270106T210000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w7-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 7\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT7
+DTSTART;TZID=Asia/Singapore:20270109T133000
+DTEND;TZID=Asia/Singapore:20270109T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w7-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Class
+DESCRIPTION:Week 7\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)
+LOCATION:LT4
+DTSTART;TZID=Asia/Singapore:20270109T090000
+DTEND;TZID=Asia/Singapore:20270109T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w8-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 8\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT6
+DTSTART;TZID=Asia/Singapore:20270113T190000
+DTEND;TZID=Asia/Singapore:20270113T210000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w8-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 8\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT7
+DTSTART;TZID=Asia/Singapore:20270116T133000
+DTEND;TZID=Asia/Singapore:20270116T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w8-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Class
+DESCRIPTION:Week 8\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)
+LOCATION:LT4
+DTSTART;TZID=Asia/Singapore:20270116T090000
+DTEND;TZID=Asia/Singapore:20270116T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w9-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 9\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT6
+DTSTART;TZID=Asia/Singapore:20270120T190000
+DTEND;TZID=Asia/Singapore:20270120T210000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w9-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 9\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT7
+DTSTART;TZID=Asia/Singapore:20270123T133000
+DTEND;TZID=Asia/Singapore:20270123T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w9-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Class
+DESCRIPTION:Week 9\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)
+LOCATION:LT4
+DTSTART;TZID=Asia/Singapore:20270123T090000
+DTEND;TZID=Asia/Singapore:20270123T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w10-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 10\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT6
+DTSTART;TZID=Asia/Singapore:20270127T190000
+DTEND;TZID=Asia/Singapore:20270127T210000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w10-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 10\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT7
+DTSTART;TZID=Asia/Singapore:20270130T133000
+DTEND;TZID=Asia/Singapore:20270130T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w10-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Class
+DESCRIPTION:Week 10\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)
+LOCATION:LT4
+DTSTART;TZID=Asia/Singapore:20270130T090000
+DTEND;TZID=Asia/Singapore:20270130T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w11-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 11\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT6
+DTSTART;TZID=Asia/Singapore:20270203T190000
+DTEND;TZID=Asia/Singapore:20270203T210000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w11-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 11\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT7
+DTSTART;TZID=Asia/Singapore:20270206T133000
+DTEND;TZID=Asia/Singapore:20270206T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w11-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Class
+DESCRIPTION:Week 11\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)
+LOCATION:LT4
+DTSTART;TZID=Asia/Singapore:20270206T090000
+DTEND;TZID=Asia/Singapore:20270206T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w12-wed-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 12\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT6
+DTSTART;TZID=Asia/Singapore:20270210T190000
+DTEND;TZID=Asia/Singapore:20270210T210000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w12-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Class
+DESCRIPTION:Week 12\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi
+LOCATION:LT7
+DTSTART;TZID=Asia/Singapore:20270213T133000
+DTEND;TZID=Asia/Singapore:20270213T170000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w12-sat-class@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Class
+DESCRIPTION:Week 12\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)
+LOCATION:LT4
+DTSTART;TZID=Asia/Singapore:20270213T090000
+DTEND;TZID=Asia/Singapore:20270213T123000
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w1-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Online video (1 hour)
+DESCRIPTION:Week 1\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w2-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Online video (1 hour)
+DESCRIPTION:Week 2\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w3-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Online video (1 hour)
+DESCRIPTION:Week 3\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20261129
+DTEND;VALUE=DATE:20261130
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w4-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Online video (1 hour)
+DESCRIPTION:Week 4\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20261206
+DTEND;VALUE=DATE:20261207
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w5-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Online video (1 hour)
+DESCRIPTION:Week 5\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20261213
+DTEND;VALUE=DATE:20261214
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6119-w6-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6119 AI in Manufacturing - Online video (1 hour)
+DESCRIPTION:Week 6\nCourse: AI in Manufacturing\nLecturer: Zheng Jianmin\; George Zhao\; Guangbin Huang (Guest Lecturer)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20261220
+DTEND;VALUE=DATE:20261221
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w1-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Online video (1 hour)
+DESCRIPTION:Week 1\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20261115
+DTEND;VALUE=DATE:20261116
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6123-w2-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6123 Agentic AI and Applications - Online video (1 hour)
+DESCRIPTION:Week 2\nCourse: Agentic AI and Applications\nLecturer: Goh Wooi Boon\; Sam Au Jit Seah\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w7-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Online video (1 hour)
+DESCRIPTION:Week 7\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270110
+DTEND;VALUE=DATE:20270111
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w8-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Online video (1 hour)
+DESCRIPTION:Week 8\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270117
+DTEND;VALUE=DATE:20270118
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w9-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Online video (1 hour)
+DESCRIPTION:Week 9\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w10-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Online video (1 hour)
+DESCRIPTION:Week 10\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w11-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Online video (1 hour)
+DESCRIPTION:Week 11\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6113-w12-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6113 Responsible Generative AI & Applications - Online video (1 hour)
+DESCRIPTION:Week 12\nCourse: Responsible Generative AI & Applications\nLecturer: Goh Wooi Boon\; Lin Guosheng\; Wang Wenya\; Shen Zhiqi\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270214
+DTEND;VALUE=DATE:20270215
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w7-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Online video (1 hour)
+DESCRIPTION:Week 7\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270110
+DTEND;VALUE=DATE:20270111
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w8-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Online video (1 hour)
+DESCRIPTION:Week 8\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270117
+DTEND;VALUE=DATE:20270118
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w9-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Online video (1 hour)
+DESCRIPTION:Week 9\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270124
+DTEND;VALUE=DATE:20270125
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w10-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Online video (1 hour)
+DESCRIPTION:Week 10\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270131
+DTEND;VALUE=DATE:20270201
+END:VEVENT
+BEGIN:VEVENT
+UID:ntu-2026-t2-ca6130-w11-sun-video@local
+DTSTAMP:20261109T032340Z
+SUMMARY:CA6130 NLP & Applications - Online video (1 hour)
+DESCRIPTION:Week 11\nCourse: NLP & Applications\nLecturer: Du Xuefeng (Sean Du)\nNo fixed time
+LOCATION:Online video
+DTSTART;VALUE=DATE:20270207
+DTEND;VALUE=DATE:20270208
+END:VEVENT
 END:VCALENDAR
