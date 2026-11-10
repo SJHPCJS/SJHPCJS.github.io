@@ -687,7 +687,7 @@
   </main>
 
   <footer class="footer">
-    来源：MCAAI AY26 T2 Timetable (20261020).pdf；教学周依据 AY2026-27 Trimester Academic Calendar。周日视频为无固定时间提醒。
+    来源：MCAAI AY26 T2 Timetable (20261020).pdf + CA6119 Course Overview pp.35–36 + CA6123 Delivery Schedule v5 (02Nov2026)；教学周依据 AY2026-27 Trimester Academic Calendar。周日视频为无固定时间提醒。
   </footer>
 
   <script>
@@ -777,6 +777,46 @@
     addWeeklyOnlineVideo([1,2], 'CA6123');
     addWeeklyOnlineVideo([7,8,9,10,11,12], 'CA6113');
     addWeeklyOnlineVideo([7,8,9,10,11], 'CA6130');
+
+    const manufacturing = [
+      ['Overview of the course', 'AI & roadmap of AI techniques', 'Introduction to AI in manufacturing, robotics & automation with AI'],
+      ['Introduction to CAD', 'Intelligent CAD (1)', 'Intelligent CAD (2)'],
+      ['Introduction to 3D printing', 'Intelligent additive manufacturing (1)', 'Intelligent additive manufacturing (2); Mid-semester quiz (1 hour, exact time TBC)'],
+      ['Introduction to data foundations', 'Data foundations for AI, industrial IoT and edge AI (1)', 'Data foundations for AI, industrial IoT and edge AI (2)'],
+      ['Introduction to predictive maintenance', 'Predictive maintenance, quality control, process and supply chain optimization (1)', 'Predictive maintenance, quality control, process and supply chain optimization (2)'],
+      ['Introduction to digital twins', 'Digital twins and simulation', 'Mini-project presentation (2 hours); Final quiz (1.5 hours); exact timings TBC']
+    ];
+    events.filter(event => event.code === 'CA6119').forEach(event => {
+      const column = event.floating ? 0 : event.day === 'wed' ? 1 : 2;
+      event.note = manufacturing[event.week - 1][column];
+      event.lecturer = event.week === 1 ? (column === 0 ? 'Zheng Jianmin' : column === 1 ? 'Guangbin Huang' : 'George Zhao') : event.week <= 3 ? 'Zheng Jianmin' : event.week === 6 && column === 2 ? 'Zheng Jianmin; George Zhao' : 'George Zhao';
+      if (column === 2 && event.week === 3) event.title = 'Lecture + Mid-semester quiz (1h)';
+      if (column === 2 && event.week === 6) event.title = 'Presentation (2h) + Final quiz (1.5h)';
+    });
+
+    const agenticTopics = [
+      ['Course briefing; Responsible agentic AI components; Human-AI agent interactions', 'Autonomy and accountability; Agentic AI security risks'],
+      ['Review and assignment consultation; Retrieval Augmented Generation (RAG) - Part 1', 'RAG - Part 2; RAG workflows; Generative AI safety'],
+      ['Week 2 recap and assignment consultation; Simple agents; Human-in-the-loop; Observability', 'Agent frameworks and architecture; Workflow orchestration; Multi-agent systems'],
+      ['Week 2-3 recap and assignment consultation; Tools, memory and guardrails', 'Agent harness and skills; AI agent traps; Evaluation; MCP; Agent2Agent']
+    ];
+    events.filter(event => event.code === 'CA6123' && !event.floating).forEach(event => {
+      event.lecturer = event.week === 1 ? 'Goh Wooi Boon' : event.week === 5 ? 'Goh Wooi Boon; Sam Au Jit Seah' : 'Sam Au Jit Seah';
+      if(event.week === 5) {
+        event.title = 'Final Quiz (1 hour)'; event.end = '19:30'; event.location = 'TBC'; event.kind = 'quiz';
+        event.note = 'Final quiz starts at 18:30; venue to be confirmed. The schedule reserves 18:30-20:30, but specifies a 1-hour quiz.';
+      } else {
+        event.note = agenticTopics[event.week - 1][event.day === 'tue' ? 0 : 1];
+        event.note += event.location === 'LHN-LT' ? '; The Arc, LHN-B1-15' : event.location === 'LT16' ? '; NS1-04-05' : event.location === 'LT8' ? '; NS1-02-01' : '; LT1A-01-01';
+      }
+    });
+    addWeeklyOnlineVideo([3,4], 'CA6123');
+    events.filter(event => event.code === 'CA6123' && event.floating).forEach(event => {
+      event.note = ['Assignment briefing; Agentic AI governance', 'Generative AI fundamentals', 'Agentic AI', 'Intelligent AI delegation'][event.week - 1] + '; No fixed time';
+      event.lecturer = event.week === 1 ? 'Goh Wooi Boon' : 'Sam Au Jit Seah';
+    });
+    addEvent({code:'CA6123',week:4,day:'fri',start:'12:00',end:'12:15',title:'Assignment submission 截止',location:'Online submission',kind:'deadline'});
+    addEvent({code:'CA6123',week:5,day:'tue',start:'12:00',end:'12:15',title:'Peer review 截止',location:'Online submission',kind:'deadline'});
 
     let currentWeek = getInitialWeek();
 
@@ -919,7 +959,7 @@
       const duration = (toMinutes(event.end) - toMinutes(event.start)) / 60;
       const kind = event.kind ? ` ${event.kind}` : "";
       return `
-        <article class="event${kind}" style="--course-color: ${course.color}; --start: ${start}; --duration: ${duration}; --lane: ${event.lane || 0}; --lanes: ${event.lanes || 1}" title="${event.code} ${escapeHtml(course.title)}">
+        <article class="event${kind}" style="--course-color: ${course.color}; --start: ${start}; --duration: ${duration}; --lane: ${event.lane || 0}; --lanes: ${event.lanes || 1}" title="${event.code} ${escapeHtml(event.note || course.title)}">
           <div>
             <div class="event-code">${event.code}</div>
             <div class="event-time">${event.start}-${event.end}</div>
@@ -990,7 +1030,7 @@
           <div class="mobile-event-time">${escapeHtml(time)}</div>
           <div class="mobile-event-body">
             <strong>${event.code} · ${escapeHtml(event.title)}</strong>
-            <span>${escapeHtml(place)}</span>
+            <span>${escapeHtml(place)}</span>${!event.floating && event.note ? `<span>${escapeHtml(event.note)}</span>` : ""}
           </div>
         </article>
       `;
@@ -1126,13 +1166,13 @@
         const description = [
           `Week ${event.week}`,
           `Course: ${course.exportTitle}`,
-          `Lecturer: ${course.lecturer}`,
+          `Lecturer: ${event.lecturer || course.lecturer}`,
           event.kind === "online" ? "Online link is omitted from the public timetable." : "",
           exportNote(event.note || "")
         ].filter(Boolean).join("\n");
 
         lines.push("BEGIN:VEVENT");
-        lines.push(`UID:ntu-2026-t2-${event.code.toLowerCase()}-w${event.week}-${event.day}-${event.floating ? "video" : "class"}@local`);
+        lines.push(`UID:ntu-2026-t2-${event.code.toLowerCase()}-w${event.week}-${event.day}-${event.floating ? "video" : event.kind === "deadline" ? "deadline" : "class"}@local`);
         lines.push(`DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "")}`);
         lines.push(`SUMMARY:${icsEscape(title)}`);
         lines.push(`DESCRIPTION:${icsEscape(description)}`);
