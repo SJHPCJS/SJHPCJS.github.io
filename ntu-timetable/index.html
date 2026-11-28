@@ -818,6 +818,15 @@
     addEvent({code:'CA6123',week:4,day:'fri',start:'12:00',end:'12:15',title:'Assignment submission 截止',location:'Online submission',kind:'deadline'});
     addEvent({code:'CA6123',week:5,day:'tue',start:'12:00',end:'12:15',title:'Peer review 截止',location:'Online submission',kind:'deadline'});
 
+    const manufacturingDeadlines = [
+      {week:4,day:'sun',id:'project-1-individual',title:'Project Assignment 1 (individual) deadline'},
+      {week:6,day:'sat',id:'project-2-group-video',title:'Project Assignment 2 group video deadline'},
+      {week:6,day:'sat',id:'project-2-individual-report',title:'Project Assignment 2 individual summary report deadline'}
+    ];
+    manufacturingDeadlines.forEach(deadline => addEvent({
+      ...deadline, code:'CA6119', floating:true, kind:'deadline', due:'23:59', location:'Online submission'
+    }));
+
     let currentWeek = getInitialWeek();
 
     function getInitialWeek() {
@@ -948,7 +957,7 @@
       return `
         <article class="floating-card" style="--course-color: ${course.color}" title="${escapeHtml(course.title)}">
           <strong>${event.code} · ${escapeHtml(event.title)}</strong>
-          <span>${escapeHtml(event.note || event.location)}</span>
+          <span>${escapeHtml(event.due || event.note || event.location)}</span>
         </article>
       `;
     }
@@ -1023,8 +1032,8 @@
     function renderMobileEvent(event) {
       const course = courses[event.code];
       const kind = event.kind ? ` ${event.kind}` : "";
-      const time = event.floating ? "待看" : `${event.start}-${event.end}`;
-      const place = event.floating ? event.note : event.location;
+      const time = event.due || (event.floating ? "待看" : `${event.start}-${event.end}`);
+      const place = event.floating && !event.due ? event.note : event.location;
       return `
         <article class="mobile-event${kind}" style="--course-color: ${course.color}">
           <div class="mobile-event-time">${escapeHtml(time)}</div>
@@ -1172,13 +1181,15 @@
         ].filter(Boolean).join("\n");
 
         lines.push("BEGIN:VEVENT");
-        lines.push(`UID:ntu-2026-t2-${event.code.toLowerCase()}-w${event.week}-${event.day}-${event.floating ? "video" : event.kind === "deadline" ? "deadline" : "class"}@local`);
+        lines.push(`UID:ntu-2026-t2-${event.code.toLowerCase()}-w${event.week}-${event.day}-${event.id || (event.floating ? "video" : event.kind === "deadline" ? "deadline" : "class")}@local`);
         lines.push(`DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "")}`);
         lines.push(`SUMMARY:${icsEscape(title)}`);
         lines.push(`DESCRIPTION:${icsEscape(description)}`);
         lines.push(`LOCATION:${icsEscape(location)}`);
 
-        if (event.floating) {
+        if (event.due) {
+          lines.push(`DTSTART;TZID=Asia/Singapore:${dateTimeStamp(date, event.due)}`);
+        } else if (event.floating) {
           lines.push(`DTSTART;VALUE=DATE:${dateStamp(date)}`);
           lines.push(`DTEND;VALUE=DATE:${dateStamp(addDays(date, 1))}`);
         } else {
